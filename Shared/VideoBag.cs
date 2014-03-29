@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
@@ -11,8 +12,8 @@ namespace NoxShared
 	/// </summary>
 	public class VideoBag : Bag
 	{
-		protected Header header;
-		protected ArrayList sections;
+		public Header header;
+		public List<Section> sections;
 
 
 		public static uint[] Palette = {
@@ -63,7 +64,7 @@ namespace NoxShared
 			public uint SizeCompressed;//aka the length of the entry's data
 			public int EntryCount;//sometimes -1?
 
-			public ArrayList Entries;
+			public List<SectionEntry> Entries;
 
 			//this is assigned by whatever constructs this object
 			public uint Offset;//the offset of this section in the .bag
@@ -216,7 +217,7 @@ namespace NoxShared
 				SizeCompressed = rdr.ReadUInt32();
 				EntryCount = rdr.ReadInt32();
 				
-				Entries = new ArrayList();
+				Entries = new List<SectionEntry>();
 
 				long startPos = stream.Position;
 				uint length = 0, o = 0;
@@ -276,7 +277,7 @@ namespace NoxShared
 		public VideoBag(string path) : base(path)
 		{
 			VideoBag.BagOffset = 0;
-			sections = new ArrayList();
+			sections = new List<Section>();
             if (File.Exists(bagPath))
                 Read();
 		}
@@ -312,12 +313,31 @@ namespace NoxShared
 			}
 		}
 
+		public System.Drawing.Bitmap ExtractOne(int index)
+		{
+			return ExtractOne((uint)index);
+		}
+		
+
+		public System.Drawing.Bitmap ExtractOne(int index, out Section section, out Section.SectionEntry entry)
+		{
+			return ExtractOne((uint)index, out section, out entry);
+		}
+
 		public System.Drawing.Bitmap ExtractOne(uint index)
+		{
+			Section tmp1;
+			Section.SectionEntry tmp2;
+			return ExtractOne(index, out tmp1, out tmp2);
+		}
+		
+
+		public System.Drawing.Bitmap ExtractOne(uint index, out Section sct, out Section.SectionEntry entry)
 		{
 			int i = 0;
 			bool stop = false;
-			Section.SectionEntry entry = null;
-			Section sct = null;
+			entry = null;
+			sct = null;
 			foreach (Section s in sections)
 				if(!stop)
 					foreach (Section.SectionEntry e in s.Entries)

@@ -1,9 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.2.2.8818
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapEditor", "MapEditor\MapEditor.csproj", "{9B0F4317-A6AC-4F6E-8ECB-E711175CFB90}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MapInterface", "MapInterface\MapInterface.vcxproj", "{44F81719-911A-4FCA-8138-389F422B6B23}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptCompiler", "ScriptCompiler\ScriptCompiler.csproj", "{CEF457C9-55BA-415A-9F45-A3BFE55C1DF4}"
 EndProject
@@ -13,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardForm", "WizardForm\Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyntaxHighlighter", "SyntaxHighlighter\SyntaxHighlighter.csproj", "{2FB0F42E-F9B6-44C0-8443-FC051A44A64E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapInterface", "MapInterface\MapInterface.csproj", "{86A66B70-2B16-477C-9CBA-5AE13863429E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +22,8 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|Win32 = Release|Win32
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9B0F4317-A6AC-4F6E-8ECB-E711175CFB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,16 +36,6 @@ Global
 		{9B0F4317-A6AC-4F6E-8ECB-E711175CFB90}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{9B0F4317-A6AC-4F6E-8ECB-E711175CFB90}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9B0F4317-A6AC-4F6E-8ECB-E711175CFB90}.Release|Win32.ActiveCfg = Release|Any CPU
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Debug|Mixed Platforms.Build.0 = Debug|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Debug|Win32.ActiveCfg = Debug|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Debug|Win32.Build.0 = Debug|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Release|Any CPU.ActiveCfg = Release|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Release|Mixed Platforms.Build.0 = Release|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Release|Win32.ActiveCfg = Release|Win32
-		{44F81719-911A-4FCA-8138-389F422B6B23}.Release|Win32.Build.0 = Release|Win32
 		{CEF457C9-55BA-415A-9F45-A3BFE55C1DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEF457C9-55BA-415A-9F45-A3BFE55C1DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEF457C9-55BA-415A-9F45-A3BFE55C1DF4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -83,6 +76,22 @@ Global
 		{2FB0F42E-F9B6-44C0-8443-FC051A44A64E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2FB0F42E-F9B6-44C0-8443-FC051A44A64E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2FB0F42E-F9B6-44C0-8443-FC051A44A64E}.Release|Win32.ActiveCfg = Release|Any CPU
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Debug|Any CPU.Build.0 = Debug|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Debug|Win32.Build.0 = Debug|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Debug|Win32.ActiveCfg = Debug|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Release|Any CPU.Build.0 = Release|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Release|Any CPU.ActiveCfg = Release|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Release|Win32.Build.0 = Release|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Release|Win32.ActiveCfg = Release|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Debug|x86.Build.0 = Debug|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Debug|x86.ActiveCfg = Debug|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Release|x86.Build.0 = Release|x86
+		{86A66B70-2B16-477C-9CBA-5AE13863429E}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

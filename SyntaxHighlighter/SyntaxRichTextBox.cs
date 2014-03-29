@@ -17,6 +17,7 @@ namespace SyntaxHighlighter
 		private int m_nLineStart = 0;
 		private int m_nLineEnd = 0;
         bool recur = false;
+        bool hasloaded = false;
 
 		/// <summary>
 		/// The settings.
@@ -148,6 +149,7 @@ public void ProcessBox()
     ProcessLine();
     SelectionStart = 0;
     SelectionLength = 0;
+    hasloaded = true;
     return;
 }
 /// <summary>

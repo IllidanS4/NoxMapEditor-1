@@ -20,8 +20,10 @@ namespace NoxMapEditor
     class ScriptFunctionDialog : System.Windows.Forms.Form
     {
         public bool hasLoaded = false;
+        bool recur = false;
 
         protected Map.ScriptFunction sf;
+        private int error;
         private bool isinited = false;
 
         //List<string> CommentList = new List<string>();
@@ -714,7 +716,7 @@ namespace NoxMapEditor
             {
                 return;
             }
-
+            error = 0;
             sf.name = nameBox.Text;
             MemoryStream ms = new MemoryStream();
             BinaryWriter wtr = new BinaryWriter(ms);
@@ -836,6 +838,11 @@ namespace NoxMapEditor
                     while (line.Length > 0)
                     {
                         line = parseWord(wtr, 0, line);
+                        /* if (error == 1)
+                           {
+                             MessageBox.Show("Syntax Error", "Line " + linenum.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                             return;
+                           }*/
                     }
                     if (flags != 0)
                         wtr.Write(flags);
@@ -1176,6 +1183,7 @@ namespace NoxMapEditor
                         }
                         else if (word.Length > 0)
                         {
+                            error = 1;
                             return "";
                         }
                         break;
@@ -1371,7 +1379,7 @@ namespace NoxMapEditor
 
         private void ScriptFunctionDialog_Load(object sender, EventArgs e)
         {
-            //int tempval;
+            int tempval;
         }
     }
 }

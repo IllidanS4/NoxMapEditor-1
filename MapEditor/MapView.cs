@@ -16,7 +16,6 @@ namespace NoxMapEditor
 {
     public class MapView : UserControl
     {
-        public uint MapPanelID = 0;
         public Brush floorBrush = Brushes.Gray;
         public bool AutoVari = true;
         public int IdCount = 1;
@@ -47,7 +46,9 @@ namespace NoxMapEditor
         private Point wallMouseLocation;
         private Point tileDrag;
         private Point mouseLocation;
-        //string tempPath;
+        public string installpath;
+        MainWindow mainWindow;
+        string tempPath;
         public class KeyState
         {
             public /*IntPtr*/ Map.Waypoint wp1; // Waypoint holder
@@ -232,7 +233,7 @@ namespace NoxMapEditor
         private CheckBox checkBox5;
         private CheckBox checkBox4;
         private CheckBox checkBox6;
-        //private VideoBag video = null;
+        private VideoBag video = null;
 
         event System.Windows.Forms.KeyEventHandler DeletePressed;
 
@@ -997,10 +998,16 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
         }
         #endregion
 
+        
+		protected override void OnLoad(EventArgs e)
+		{
+			this.mainWindow = this.ParentForm as MainWindow;
+			base.OnLoad(e);
+		}
+        
         public MapView()
         {
             InitializeComponent();
-            MapPanelID = (uint)mapPanel.Handle.ToInt32();
             string[] cols = Enum.GetNames(typeof(tilecolors));
             int count = 0;
             Array vals = Enum.GetValues(typeof(tilecolors));
@@ -1054,6 +1061,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                 MessageBox.Show("Can not find the Nox directory in the registry. You can try reinstalling Nox to fix this.", "Error");
                 Environment.Exit(1);
             }
+            installpath = key.GetValue("InstallPath") as string;
         }
 
         ~MapView()
@@ -1211,14 +1219,13 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                     Map.Objects.Add(obj);
                     unsafe
                     {
-                        IntPtr ptr = Marshal.StringToHGlobalAnsi(obj.Name);
                         int val = obj.UniqueID;
                         if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
                         {
-                            MainWindow.myMap.AddObject(ptr.ToPointer(), (int)obj.Location.X, (int)obj.Location.Y, val,obj.modbuf[0]);
+                            mainWindow.myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,obj.modbuf[0]);
                         }
                         else
-                            MainWindow.myMap.AddObject(ptr.ToPointer(), (int)obj.Location.X, (int)obj.Location.Y, val,-1);
+                            mainWindow.myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,-1);
                     }
                 }
                 else if (CurrentMode == Mode.MAKE_WINDOW)
@@ -1313,7 +1320,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                 Map.Objects.Remove(SelectedObject);
                 unsafe
                 {
-                    MainWindow.myMap.DeleteObject((int)val);
+                    mainWindow.myMap.DeleteObject((int)val);
                 }
 
             }
@@ -1342,7 +1349,6 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                     foreach (Map.Tile.EdgeTile edge in tile.EdgeTiles)
                         statusTile.Text += String.Format(" {0}-0x{1:x2}-{2}-{3}", ThingDb.FloorTileNames[edge.Graphic], edge.Variation, edge.Dir, ThingDb.EdgeTileNames[edge.Edge]);
                 }
-                /*
                 if (video != null)
                 {
                     Bitmap bits = video.ExtractOne(tile.Variations[tile.Variation]);
@@ -1353,7 +1359,6 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                         //tilePictureBox.Load(tempPath);
                     }
                 }
-                 */
             }
 
            // if (KeyStates.wp1 != null && CurrentMode == Mode.EDIT_WAYPOINT)
@@ -1455,7 +1460,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                 Map.Objects.Remove(SelectedObject);
                 unsafe
                 {
-                    MainWindow.myMap.DeleteObject((int)val);
+                    mainWindow.myMap.DeleteObject((int)val);
                 }
                 mapPanel.Invalidate();
             }   
@@ -1510,14 +1515,13 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                     int val = SelectedObject.UniqueID;
                     unsafe
                     {
-                        MainWindow.myMap.DeleteObject((int)val);
-                        IntPtr ptr = Marshal.StringToHGlobalAnsi(SelectedObject.Name);
+                        mainWindow.myMap.DeleteObject((int)val);
                         if ((ThingDb.Things[SelectedObject.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
                         {
-                        MainWindow.myMap.AddObject(ptr.ToPointer(), (int)SelectedObject.Location.X, (int)SelectedObject.Location.Y, val, SelectedObject.modbuf[0]);
+                        mainWindow.myMap.AddObject(SelectedObject.Name, (int)SelectedObject.Location.X, (int)SelectedObject.Location.Y, val, SelectedObject.modbuf[0]);
                         }
                         else
-                        MainWindow.myMap.AddObject(ptr.ToPointer(), (int)SelectedObject.Location.X, (int)SelectedObject.Location.Y, val,-1);
+                        mainWindow.myMap.AddObject(SelectedObject.Name, (int)SelectedObject.Location.X, (int)SelectedObject.Location.Y, val,-1);
                     }
                 }
                 mapPanel.Invalidate();
@@ -1623,9 +1627,8 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                             unsafe
                             {
                                // col = Color.FromArgb();
-                                IntPtr ptr = Marshal.StringToHGlobalAnsi(tile.Graphic);
                                 Map.Tiles.Add(tilePt, tile);
-                                MainWindow.myMap.AddTile(ptr.ToPointer(), tilePt.Y, tilePt.X, CreateVariation(tilePt, (ushort)tileVar.SelectedIndex, (byte)tileGraphic.SelectedIndex));
+                                mainWindow.myMap.AddTile(tile.Graphic, tilePt.Y, tilePt.X, CreateVariation(tilePt, (ushort)tileVar.SelectedIndex, (byte)tileGraphic.SelectedIndex));
                             }
                         }
                     }
@@ -1742,9 +1745,9 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
             Size size = mapPanel.Size;
 
             
-            //MainWindow.myMap.SetLoc(winX, winY);
-           // MainWindow.myMap.Update_Window();
-            //MainWindow.myMap.Render(/*((MainWindow)this.Parent.Parent.Parent).Magnify*/false);
+            //mainWindow.myMap.SetLoc(winX, winY);
+           // mainWindow.myMap.Update_Window();
+            //mainWindow.myMap.Render(/*((MainWindow)this.Parent.Parent.Parent).Magnify*/false);
             g.Clear(ColorLayout.Background);
             //g.FillRectangle(ColorLayout.Background, new Rectangle(new Point(0, 0), size));
             Pen pen;
@@ -2619,7 +2622,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                 SelectedObject = null;
                 unsafe
                 {
-                    MainWindow.myMap.DeleteObject((int)val);
+                    mainWindow.myMap.DeleteObject((int)val);
                 }
                 mapPanel.Invalidate();
             }
@@ -3026,8 +3029,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                         {
                             AutoEdge(tilePt);
                         }
-                        IntPtr ptr = Marshal.StringToHGlobalAnsi(tile.Graphic);
-                        MainWindow.myMap.AddTile(ptr.ToPointer(), tilePt.Y, tilePt.X, tile.Variation);
+                        mainWindow.myMap.AddTile(tile.Graphic, tilePt.Y, tilePt.X, tile.Variation);
                         tilePt.X++;
                         //tileDrag = tilePt;  // Re-enable to allow tile dragging again
                         //dragging = true;
@@ -3070,7 +3072,6 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                                     variation,
                                     newblends
                                     );
-                                IntPtr ptr = Marshal.StringToHGlobalAnsi(tile.Graphic);
                                 if (!Map.Tiles.ContainsKey(tile.Location))
                                 {
                                     Map.Tiles.Add(tile.Location, tile);
@@ -3078,7 +3079,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                                     {
                                         AutoEdge(tile.Location);
                                     }
-                                    MainWindow.myMap.AddTile(ptr.ToPointer(), pat2.Y, pat2.X, variation);
+                                    mainWindow.myMap.AddTile(tile.Graphic, pat2.Y, pat2.X, variation);
                                 }
                             }
                         }
@@ -3091,7 +3092,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
             if (CurrentMode == Mode.MAKE_FLOOR )
             {
                 Map.Tiles.Remove(tilePt);
-                MainWindow.myMap.RemoveTile(tilePt.X, tilePt.Y);
+                mainWindow.myMap.RemoveTile(tilePt.X, tilePt.Y);
                 if (threeFloorBox.Checked)
                 {
                     unsafe
@@ -3109,7 +3110,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                                 pat2.X += j * 1;
                                 pat2.Y += j * 1;
                                 pat2.Y -= 2;
-                                MainWindow.myMap.RemoveTile(pat2.X, pat2.Y);
+                                mainWindow.myMap.RemoveTile(pat2.X, pat2.Y);
                                 Map.Tiles.Remove(new Point(pat2.X, pat2.Y));
                             }
                         }
@@ -3122,7 +3123,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
         private void AutoEdge(Point pt)
         {
             Point tilePt = pt;//GetNearestTilePoint(pt);
-            //Map.Tile.EdgeTile.Direction EdgeDir;
+            Map.Tile.EdgeTile.Direction EdgeDir;
 
             //tilePt = GetNearestTilePoint(tilePt);
 
@@ -3511,9 +3512,10 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
             Random ran = new Random();
             switch (EdgeName)
             {
-                case "MudEdge": return((ushort)ran.Next(4));
-                default: return (ushort)TileVari;
-            }
+                case "MudEdge": return((ushort)ran.Next(4)); break;
+                default: return (ushort)TileVari; break;
+            };
+            return 0;
         }
         private bool IsTileFromDir(Point tilePt, Map.Tile.EdgeTile.Direction EdgeDir)
         {
@@ -3664,14 +3666,8 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
 
         private void cboObjCreate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            unsafe
-            {
-                IntPtr ptr = Marshal.StringToHGlobalAnsi((string)cboObjCreate.SelectedItem);
-                IntPtr ptr2 = Marshal.StringToHGlobalAnsi(Application.StartupPath + "\\object.bmp");
-                MainWindow.myMap.SaveObjectToBMP(ptr.ToPointer(), ptr2.ToPointer());
-                pictureBox1.ImageLocation = Application.StartupPath + "\\object.bmp";
-            }
-
+        	if(mainWindow != null)
+        		pictureBox1.Image = mainWindow.myMap.GetObjectBitmap((string)cboObjCreate.SelectedItem);
         }
         public static void SetWallBox(PictureBox box, string val)
         {
@@ -3679,7 +3675,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
             {
                 IntPtr ptr = Marshal.StringToHGlobalAnsi(val);
                 IntPtr ptr2 = Marshal.StringToHGlobalAnsi(Application.StartupPath + "\\wall.bmp");
-                MainWindow.myMap.SaveWallToBMP(ptr.ToPointer(), ptr2.ToPointer());
+                mainWindow.myMap.SaveWallToBMP(ptr.ToPointer(), ptr2.ToPointer());
                 box.ImageLocation = Application.StartupPath + "\\wall.bmp";
             }*/
 
@@ -3775,8 +3771,8 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
         {
          /*   if (mapPanel.Width > 0 && mapPanel.Height > 0)
             {
-                MainWindow.myMap.ReInit(mapPanel.Width, mapPanel.Height);
-                MainWindow.myMap.Update_Window();
+                mainWindow.myMap.ReInit(mapPanel.Width, mapPanel.Height);
+                mainWindow.myMap.Update_Window();
             }*/
         }
 

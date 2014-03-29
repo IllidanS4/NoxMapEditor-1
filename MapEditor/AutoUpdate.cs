@@ -1,8 +1,7 @@
 using System;
-using System.Diagnostics;
-using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 /// <summary>
@@ -138,7 +137,7 @@ namespace MapEditor
                         //}
                         //else
                         //{
-                            date = DateTime.Parse(Info[1].Trim(), CultureInfo.InvariantCulture);
+                            date = DateTime.Parse(Info[1].Trim());
                             date2 = File.GetCreationTime(Application.StartupPath + "\\" + localpath + Info[0].Trim());
                             isToUpgrade = Convert.ToBoolean(date > date2);
                         //}
@@ -235,7 +234,7 @@ namespace MapEditor
                     if (FileExists)
                     {
                             isDLL = Convert.ToBoolean(Info[2]);
-                            date = DateTime.Parse(Info[1].Trim(), CultureInfo.InvariantCulture);
+                            date = DateTime.Parse(Info[1].Trim());
                             date2 = File.GetCreationTime(Application.StartupPath + "\\" + localpath + Info[0].Trim());
                             isToUpgrade = Convert.ToBoolean(date > date2);
                             isToDelete = isToUpgrade;
@@ -261,7 +260,7 @@ namespace MapEditor
                     //  Renombrar el archivo temporal al nombre de archivo real
                     if (isToUpgrade)
                     {
-                            date = DateTime.Parse(Info[1].Trim(), CultureInfo.InvariantCulture);
+                            date = DateTime.Parse(Info[1].Trim());
                             File.Move(TempFileName, FileName);
                             File.SetCreationTime(FileName, date);
                     }

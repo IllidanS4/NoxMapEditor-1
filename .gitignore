@@ -6,3 +6,6 @@ Debug/
 Release/
 bin/
 obj/
+*.bat
+*.sh
+login.txt

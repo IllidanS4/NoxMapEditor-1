@@ -1,7 +1,10 @@
 using System;
 using System.IO;
-//using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
+using NoxShared;
+
+//using System.Text.RegularExpressions;
+
 
 public abstract class Bag// : Observable
 {
@@ -13,9 +16,9 @@ public abstract class Bag// : Observable
 		VIDEO = 0xFAEDBCEB//Nox video
 	}
 		
-	protected FileStream bag;
-	protected FileStream idx;
-	protected string bagPath;
+	protected internal FileStream bag;
+	protected internal FileStream idx;
+	protected internal string bagPath;
 
 	//caller will use this to determine the right class and then
 	//construct it himself
@@ -44,10 +47,10 @@ public abstract class Bag// : Observable
 		{
 				//HACK: these can break if namespace or class names change, FIXME
 			case BagType.VIDEO:
-				bagClass = Type.GetType("NoxBagTool.VideoBag");
+				bagClass = typeof(VideoBag);
 				break;
 			case BagType.GABA2:
-				bagClass = Type.GetType("NoxBagTool.Gaba2Bag");
+				bagClass = typeof(AudioBag);
 				break;
 		}
 
@@ -64,6 +67,7 @@ public abstract class Bag// : Observable
         if (!File.Exists(bagPath))
         {
             throw new FileNotFoundException("Specified .bag was not found.", bagPath);
+            return false;
         }
         try
         {

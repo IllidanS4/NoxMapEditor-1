@@ -22,7 +22,7 @@ namespace NoxMapEditor
         // Need to fix delegates before I can use callback features
        // public delegate void OBJMoved_CALLBACK(int ObjNum,int X,int Y);
         public static CompilerResults results;
-        public static MAP_GUI myMap;
+        public MAP_GUI myMap;
         int lastX = 0; // Last click location
         int lastY = 0; // Last click location
         bool RMouseDown = false;
@@ -153,7 +153,7 @@ namespace NoxMapEditor
                 }
                 AutoUpdate.UpdateFileName = "Update.txt";
 
-                if (AutoUpdate.IsUpdatable("http://www.noxhub.net/updates/MapEditor",""))
+                /*if (AutoUpdate.IsUpdatable("http://www.noxhub.net/updates/MapEditor",""))
                 {
                     if (MessageBox.Show(null, "NoxMapEditor updates are available, do you wish to update now?", "Update Report", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                     {
@@ -176,7 +176,7 @@ namespace NoxMapEditor
                         Environment.Exit(1);
                         return;
                     }
-                }
+                }*/
                 if (AutoUpdate.IsUpdatable("http://www.noxhub.net/updates/MapEditor/scripts/defaults","scripts\\objects\\defaultmods\\"))
                 {
                     if (MessageBox.Show(null, "New default mods are available, do you wish to update now?", "Update Report", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -204,9 +204,9 @@ namespace NoxMapEditor
                 }
 
             map = new Map();
-            myMap = new MAP_GUI();
             cultures = GetSupportedCultures();
 			InitializeComponent();
+            myMap = new MAP_GUI(mapView.installpath);
 
             MenuItem item;
 			foreach (CultureInfo culture in cultures)
@@ -228,10 +228,8 @@ namespace NoxMapEditor
 
             unsafe
             {
-                uint pHandle = (uint)GuiPanel.Handle.ToInt32();
-
-                myMap.InitScreen(pHandle);
-                myMap.Update_Window();
+                myMap.InitScreen(GuiPanel);
+                GuiPanel.Invalidate();
                 //myMap.InitScreen(pHandle);
                 //Encoding.ASCII ascii = new Encoding.ASCII;
                 //Encoding unicode = Encoding.Unicode;
@@ -1039,7 +1037,9 @@ namespace NoxMapEditor
 		[STAThread]
 		static void Main()
 		{
-            try
+			System.Net.WebRequest.DefaultWebProxy = null;
+			
+            /*try
             {
                 Debug.Listeners.Add(new TextWriterTraceListener("Debug.log"));
 				Debug.AutoFlush = true;
@@ -1050,14 +1050,14 @@ namespace NoxMapEditor
                 MessageBox.Show("Unable to open debug log.", "Non-fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             try
-            {
+            {*/
                 Application.Run(new MainWindow());
-			}
+			/*}
 		catch (Exception ex)
 			{
 				new ExceptionDialog(ex).ShowDialog();
 				Environment.Exit(1);
-			}
+			}*/
 		}
 		private void menuItemOpen_Click(object sender, EventArgs e)
 		{
@@ -1101,8 +1101,7 @@ namespace NoxMapEditor
                 {
                     unsafe
                     {
-                        IntPtr ptr = Marshal.StringToHGlobalAnsi(tile.Graphic);
-                        myMap.AddTile(ptr.ToPointer(), tile.Location.Y, tile.Location.X,(int)tile.Variation);
+                        myMap.AddTile(tile.Graphic, tile.Location.Y, tile.Location.X,(int)tile.Variation);
                     }
                 }
 
@@ -1111,14 +1110,13 @@ namespace NoxMapEditor
                     unsafe
                     {
                         obj.UniqueID = mapView.IdCount++;
-                        IntPtr ptr = Marshal.StringToHGlobalAnsi(obj.Name);
                         int val = obj.UniqueID;
                         if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
                         {
-                           myMap.AddObject(ptr.ToPointer(), (int)obj.Location.X, (int)obj.Location.Y,val, obj.modbuf[0]);
+                           myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y,val, obj.modbuf[0]);
                         }
                         else
-                        myMap.AddObject(ptr.ToPointer(), (int)obj.Location.X, (int)obj.Location.Y,val,-1);
+                        myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y,val,-1);
                     }
                 }
                 myMap.SetXY(1, 1);
@@ -1256,11 +1254,7 @@ namespace NoxMapEditor
 
                 foreach (Map.Tile tile in map.Tiles.Values)
                 {
-                    unsafe
-                    {
-                        IntPtr ptr = Marshal.StringToHGlobalAnsi(tile.Graphic);
-                        myMap.AddTile(ptr.ToPointer(), tile.Location.Y, tile.Location.X, (int)tile.Variation);
-                    }
+                      myMap.AddTile(tile.Graphic, tile.Location.Y, tile.Location.X, (int)tile.Variation);
                 }
 
                 foreach (Map.Object obj in map.Objects)
@@ -1268,14 +1262,13 @@ namespace NoxMapEditor
                     unsafe
                     {
                         obj.UniqueID = mapView.IdCount++;
-                        IntPtr ptr = Marshal.StringToHGlobalAnsi(obj.Name);
                         int val = obj.UniqueID;
                         if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
                         {
-                            myMap.AddObject(ptr.ToPointer(), (int)obj.Location.X, (int)obj.Location.Y, val, obj.modbuf[0]);
+                            myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val, obj.modbuf[0]);
                         }
                         else
-                        myMap.AddObject(ptr.ToPointer(), (int)obj.Location.X, (int)obj.Location.Y, val,-1);
+                        myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,-1);
                     }
                 }
                 myMap.SetXY(1, 1);
@@ -1440,7 +1433,7 @@ namespace NoxMapEditor
         {
             if (tabControl1.SelectedTab == tabGUI)
             {
-                myMap.Render(Magnify);
+                GuiPanel.Invalidate();
                 //unsafe
                 //{
                     //IntPtr pt = (IntPtr)myMap.GetSurface();
@@ -1453,7 +1446,7 @@ namespace NoxMapEditor
         private void tabGUI_Enter(object sender, EventArgs e)
         {
             myMap.SetLoc(mapView.winX, mapView.winY);
-            myMap.Update_Window();
+            GuiPanel.Invalidate();
             timer1.Enabled = true;
         }
         private void tabGUI_Leave(object sender, EventArgs e)
@@ -1462,7 +1455,7 @@ namespace NoxMapEditor
         }
         private void MainWindow_Move(object sender, EventArgs e)
         {
-            myMap.Update_Window();
+            GuiPanel.Invalidate();
         }
         private void tabGUI_Resize(object sender, EventArgs e)
         {
@@ -1498,6 +1491,7 @@ namespace NoxMapEditor
                             break;
                         default:
                             return;
+                            break;
                     }
                     mapBitmap.Save(sfd.FileName, imageFormat);
                 }
@@ -1515,22 +1509,22 @@ namespace NoxMapEditor
         }
         private void menuItem4_Click(object sender, EventArgs e)
         {
-            myMap.SetBG(Color.Blue.R,Color.Blue.G,Color.Blue.B);
+            myMap.SetBG(Color.Blue);
         }
 
         private void menuItem5_Click(object sender, EventArgs e)
         {
-            myMap.SetBG(Color.Red.R, Color.Red.G, Color.Red.B);
+            myMap.SetBG(Color.Red);
         }
 
         private void menuItem6_Click(object sender, EventArgs e)
         {
-            myMap.SetBG(Color.Green.R, Color.Green.G, Color.Green.B);
+            myMap.SetBG(Color.Green);
         }
 
         private void menuItem7_Click(object sender, EventArgs e)
         {
-            myMap.SetBG(0, 0, 0); // Set background to black
+            myMap.SetBG(Color.Black); // Set background to black
         }
 
         private void menuItem10_Click(object sender, EventArgs e)
@@ -1778,12 +1772,12 @@ namespace NoxMapEditor
         private void GuiPanel_Resize(object sender, EventArgs e)
         {
             myMap.ReInit(GuiPanel.Width, GuiPanel.Height);
-            myMap.Update_Window();
+            GuiPanel.Invalidate();
         }
 
         private void GuiPanel_Paint(object sender, PaintEventArgs e)
         {
-            myMap.Update_Window();
+        	myMap.Render(Magnify, e.Graphics);
         }
 
         private void chkShowNPC_CheckedChanged(object sender, EventArgs e)

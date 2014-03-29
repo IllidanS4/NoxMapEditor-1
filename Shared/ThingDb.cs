@@ -336,7 +336,7 @@ namespace NoxShared
 				public class Sequence
 				{
 					public string Name;
-					public ArrayList Frames = new ArrayList();
+					public List<int> Frames = new List<int>();
 
 					public Sequence(Stream stream)
 					{
@@ -377,7 +377,7 @@ namespace NoxShared
 				public List<int> Frames = new List<int>();//At least i think they're frames?
 				public byte b1;
 
-				public ArrayList Sequences = new ArrayList();
+				public List<Sequence> Sequences = new List<Sequence>();
 
 				public Animation(Stream stream)
 				{
@@ -497,9 +497,9 @@ namespace NoxShared
 		{
 			//these field names must remain as is!! Read() uses reflection to initialize them
 			public string Name;
-			public uint Speed;
-			public uint Health;
-			public uint Worth;
+			public int Speed;
+			public int Health;
+			public int Worth;
 			public string Size;
             public string Extent;
             public string ExtentType;
@@ -512,7 +512,7 @@ namespace NoxShared
 			public FlagsFlags Flags;
 			public ClassFlags Class;
 			public BitArray Subclass = new BitArray(subclassBitCount);
-			public uint Weight;
+			public int Weight;
 			public MaterialFlags Material;
 			public float Mass;
 			public string Pickup;
@@ -524,9 +524,9 @@ namespace NoxShared
 			public string Die;
 			public string Init;
 			public string Update;
-			public uint MenuIcon;
+			public int MenuIcon;
 			public string PrettyName;
-			public uint PrettyImage;
+			public int PrettyImage;
 			public string Description;
 
 			[Flags]
@@ -730,7 +730,7 @@ namespace NoxShared
 				WOOD = 0x400,
 			}
 
-			public ArrayList States = new ArrayList();
+			public List<ThingDb.Image.State> States = new List<ThingDb.Image.State>();
 
 			public Thing(Stream stream)
 			{
@@ -865,15 +865,12 @@ namespace NoxShared
 				}
 			}
 
-            private Regex regex1 = new Regex("(?<field>.*)( = )(?<value>.*)", RegexOptions.IgnoreCase);
-            private Regex regex2 = new Regex("(?<flag>\\w+)");
 			public void Parse(string line)
 			{
 				CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
-                Regex regex = regex1;
-                Match regexmatch = regex.Match(line);
-                string fldString = regexmatch.Groups["field"].Value;
-                string valString = regexmatch.Groups["value"].Value;
+				Regex regex = new Regex("(?<field>.*)( = )(?<value>.*)", RegexOptions.IgnoreCase);
+				string fldString = regex.Match(line).Groups["field"].Value;
+				string valString = regex.Match(line).Groups["value"].Value;
 
 				FieldInfo field = GetType().GetField(fldString, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase);
 				if (field != null)
@@ -883,7 +880,7 @@ namespace NoxShared
 					//special handling for enumed types
 					if (field.Name == "Flags")
 					{
-                        regex = regex2;//group "flag" will have whatever's between plus signs
+						regex = new Regex("(?<flag>\\w+)");//group "flag" will have whatever's between plus signs
 						FlagsFlags flags = 0;
 						foreach (Match match in regex.Matches(valString))
 							flags |= (FlagsFlags) Enum.Parse(typeof(FlagsFlags), match.Groups["flag"].Value);
@@ -923,7 +920,7 @@ namespace NoxShared
                     }
                     else if (field.Name == "Class")
                     {
-                        regex = regex2;//group "flag" will have whatever's between plus signs
+                        regex = new Regex("(?<flag>\\w+)");//group "flag" will have whatever's between plus signs
                         ClassFlags flags = 0;
                         ArrayList enums = new ArrayList();
 
@@ -941,13 +938,13 @@ namespace NoxShared
 							Parse(typeof(SubclassFlags), match.Groups["flag"].Value);
 						field.SetValue(this, flags);
 						*/
-                        regex = regex2;//group "flag" will have whatever's between plus signs
+						regex = new Regex("(?<flag>\\w+)");//group "flag" will have whatever's between plus signs
 						foreach (Match match in regex.Matches(valString))
 							Subclass[(int) (SubclassBitIndex) Enum.Parse(typeof(SubclassBitIndex),  match.Groups["flag"].Value)] = true;
 					}
 					else if (field.Name == "Material")
 					{
-                        regex = regex2;//group "flag" will have whatever's between plus signs
+						regex = new Regex("(?<flag>\\w+)");//group "flag" will have whatever's between plus signs
 						MaterialFlags flags = 0;
 						foreach (Match match in regex.Matches(valString))
 							flags |= (MaterialFlags) Enum.Parse(typeof(MaterialFlags), match.Groups["flag"].Value);
