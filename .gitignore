@@ -2,9 +2,9 @@
 *.sdf
 *.suo
 *.user
-Debug/
-Release/
-bin/
-obj/
+*/Debug/
+*/Release/
+*/bin/
+*/obj/
 *.bat
 *.sh
