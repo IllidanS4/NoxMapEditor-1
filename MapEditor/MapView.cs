@@ -1018,7 +1018,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                {
                   if (str == til.Name)
                   {
-                    til.col = Color.FromArgb((int)((uint)vals.GetValue(count)));
+                  	til.col = Color.FromArgb(unchecked((int)((uint)vals.GetValue(count))));
                     til.hascolor = true;
                     break;
                   }
