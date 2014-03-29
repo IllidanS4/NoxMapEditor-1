@@ -2,6 +2,10 @@
 *.sdf
 *.suo
 *.user
+Debug/
+Release/
+bin/
+obj/
 */Debug/
 */Release/
 */bin/
