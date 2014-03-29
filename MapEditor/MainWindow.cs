@@ -226,21 +226,9 @@ namespace NoxMapEditor
 			mapType.Items.AddRange(new ArrayList(Map.MapInfo.MapTypeNames.Values).ToArray());
 			mapType.SelectedIndex = 3;//arena by default
 
-            unsafe
-            {
-                myMap.InitScreen(GuiPanel);
-                GuiPanel.Invalidate();
-                //myMap.InitScreen(pHandle);
-                //Encoding.ASCII ascii = new Encoding.ASCII;
-                //Encoding unicode = Encoding.Unicode;
-
-                //char * text = (char*)myMap.getName(11);
-                //tabGUI.Text = 
-                //string str = Marshal.PtrToStringAnsi(text);
-               
-
-                //myMap.AddObject(1840, 100, 100);
-            }
+            myMap.InitScreen(GuiPanel);
+            GuiPanel.Invalidate();
+                
             LoadNewMap();
             spl.Close();
             if (JustUpdated)
@@ -1038,6 +1026,8 @@ namespace NoxMapEditor
 		static void Main()
 		{
 			System.Net.WebRequest.DefaultWebProxy = null;
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
 			
             /*try
             {
@@ -1099,25 +1089,19 @@ namespace NoxMapEditor
 
                 foreach (Map.Tile tile in map.Tiles.Values)
                 {
-                    unsafe
-                    {
-                        myMap.AddTile(tile.Graphic, tile.Location.Y, tile.Location.X,(int)tile.Variation);
-                    }
+                    myMap.AddTile(tile.Graphic, tile.Location.Y, tile.Location.X,(int)tile.Variation);
                 }
 
                 foreach (Map.Object obj in map.Objects)
                 {
-                    unsafe
+                    obj.UniqueID = mapView.IdCount++;
+                    int val = obj.UniqueID;
+                    if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
                     {
-                        obj.UniqueID = mapView.IdCount++;
-                        int val = obj.UniqueID;
-                        if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
-                        {
-                           myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y,val, obj.modbuf[0]);
-                        }
-                        else
-                        myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y,val,-1);
+                       myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y,val, obj.modbuf[0]);
                     }
+                    else
+                    myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y,val,-1);
                 }
                 myMap.SetXY(1, 1);
 
@@ -1259,17 +1243,14 @@ namespace NoxMapEditor
 
                 foreach (Map.Object obj in map.Objects)
                 {
-                    unsafe
+                    obj.UniqueID = mapView.IdCount++;
+                    int val = obj.UniqueID;
+                    if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
                     {
-                        obj.UniqueID = mapView.IdCount++;
-                        int val = obj.UniqueID;
-                        if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
-                        {
-                            myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val, obj.modbuf[0]);
-                        }
-                        else
-                        myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,-1);
+                        myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val, obj.modbuf[0]);
                     }
+                    else
+                    myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,-1);
                 }
                 myMap.SetXY(1, 1);
 

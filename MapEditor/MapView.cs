@@ -1217,16 +1217,13 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                     while (Map.Objects.extents.Contains(obj.Extent))
                         obj.Extent++;
                     Map.Objects.Add(obj);
-                    unsafe
+                    int val = obj.UniqueID;
+                    if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
                     {
-                        int val = obj.UniqueID;
-                        if ((ThingDb.Things[obj.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
-                        {
-                            mainWindow.myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,obj.modbuf[0]);
-                        }
-                        else
-                            mainWindow.myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,-1);
+                        mainWindow.myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,obj.modbuf[0]);
                     }
+                    else
+                        mainWindow.myMap.AddObject(obj.Name, (int)obj.Location.X, (int)obj.Location.Y, val,-1);
                 }
                 else if (CurrentMode == Mode.MAKE_WINDOW)
                 {
@@ -1318,11 +1315,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                 
                 int val = SelectedObject.UniqueID;
                 Map.Objects.Remove(SelectedObject);
-                unsafe
-                {
-                    mainWindow.myMap.DeleteObject((int)val);
-                }
-
+                mainWindow.myMap.DeleteObject((int)val);
             }
         }
         private void mapPanel_MouseMove(object sender, MouseEventArgs e)
@@ -1458,10 +1451,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
             {
                 int val = SelectedObject.UniqueID;
                 Map.Objects.Remove(SelectedObject);
-                unsafe
-                {
-                    mainWindow.myMap.DeleteObject((int)val);
-                }
+                mainWindow.myMap.DeleteObject((int)val);
                 mapPanel.Invalidate();
             }   
         }
@@ -1513,16 +1503,13 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                 if (SelectedObject != null)
                 {
                     int val = SelectedObject.UniqueID;
-                    unsafe
+                    mainWindow.myMap.DeleteObject((int)val);
+                    if ((ThingDb.Things[SelectedObject.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
                     {
-                        mainWindow.myMap.DeleteObject((int)val);
-                        if ((ThingDb.Things[SelectedObject.Name].Class & ThingDb.Thing.ClassFlags.DOOR) == ThingDb.Thing.ClassFlags.DOOR)
-                        {
-                        mainWindow.myMap.AddObject(SelectedObject.Name, (int)SelectedObject.Location.X, (int)SelectedObject.Location.Y, val, SelectedObject.modbuf[0]);
-                        }
-                        else
-                        mainWindow.myMap.AddObject(SelectedObject.Name, (int)SelectedObject.Location.X, (int)SelectedObject.Location.Y, val,-1);
+                    mainWindow.myMap.AddObject(SelectedObject.Name, (int)SelectedObject.Location.X, (int)SelectedObject.Location.Y, val, SelectedObject.modbuf[0]);
                     }
+                    else
+                    mainWindow.myMap.AddObject(SelectedObject.Name, (int)SelectedObject.Location.X, (int)SelectedObject.Location.Y, val,-1);
                 }
                 mapPanel.Invalidate();
             }
@@ -1624,12 +1611,9 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                         Map.Tile tile = new Map.Tile(tilePt, (byte)tileGraphic.SelectedIndex, CreateVariation(tilePt, (ushort)tileVar.SelectedIndex, (byte)tileGraphic.SelectedIndex));
                         if (!Map.Tiles.ContainsKey(tilePt) && tilePt.X >= 0 && tilePt.Y >= 0 && tilePt.X <= 255 && tilePt.Y <= 255)
                         {
-                            unsafe
-                            {
-                               // col = Color.FromArgb();
-                                Map.Tiles.Add(tilePt, tile);
-                                mainWindow.myMap.AddTile(tile.Graphic, tilePt.Y, tilePt.X, CreateVariation(tilePt, (ushort)tileVar.SelectedIndex, (byte)tileGraphic.SelectedIndex));
-                            }
+                           // col = Color.FromArgb();
+                            Map.Tiles.Add(tilePt, tile);
+                            mainWindow.myMap.AddTile(tile.Graphic, tilePt.Y, tilePt.X, CreateVariation(tilePt, (ushort)tileVar.SelectedIndex, (byte)tileGraphic.SelectedIndex));
                         }
                     }
                 }
@@ -2620,10 +2604,7 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                 int val = SelectedObject.UniqueID;
                 Map.Objects.Remove(SelectedObject);
                 SelectedObject = null;
-                unsafe
-                {
-                    mainWindow.myMap.DeleteObject((int)val);
-                }
+                mainWindow.myMap.DeleteObject((int)val);
                 mapPanel.Invalidate();
             }
         }
@@ -3022,65 +3003,60 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                         variation,
                         newblends
                         );
-                    unsafe
+                    
+                    Map.Tiles.Add(tilePt, tile);
+                    if (chkAutoEdge.Checked)
                     {
-                        Map.Tiles.Add(tilePt, tile);
-                        if (chkAutoEdge.Checked)
-                        {
-                            AutoEdge(tilePt);
-                        }
-                        mainWindow.myMap.AddTile(tile.Graphic, tilePt.Y, tilePt.X, tile.Variation);
-                        tilePt.X++;
-                        //tileDrag = tilePt;  // Re-enable to allow tile dragging again
-                        //dragging = true;
+                        AutoEdge(tilePt);
                     }
+                    mainWindow.myMap.AddTile(tile.Graphic, tilePt.Y, tilePt.X, tile.Variation);
+                    tilePt.X++;
+                    //tileDrag = tilePt;  // Re-enable to allow tile dragging again
+                    //dragging = true;
 
                 }
                 else if(threeFloorBox.Checked == true)
                 {
-                    unsafe
-                    {
-                        Point pat = new Point();
-                        int i = 0;
+                    Point pat = new Point();
+                    int i = 0;
 
-                        int cols = 3;//ThingDb.FloorTiles[(byte)tileGraphic.SelectedIndex].numCols;
-                        int rows = 3;//ThingDb.FloorTiles[(byte)tileGraphic.SelectedIndex].numRows;
-                        for (pat = tilePt; i < rows; i++, pat.X--, pat.Y++)
+                    int cols = 3;//ThingDb.FloorTiles[(byte)tileGraphic.SelectedIndex].numCols;
+                    int rows = 3;//ThingDb.FloorTiles[(byte)tileGraphic.SelectedIndex].numRows;
+                    for (pat = tilePt; i < rows; i++, pat.X--, pat.Y++)
+                    {
+                        for (int j = 0; j < cols; j++)
                         {
-                            for (int j = 0; j < cols; j++)
+                            Point pat2 = new Point();
+                            pat2 = pat;
+                            pat2.X += j * 1;
+                            pat2.Y += j * 1;
+                            //pat2.X -= 1;
+                            pat2.Y -= 2;
+                            ushort variation = CreateVariation(pat2, (ushort)(tileVar.SelectedIndex-1), (byte)tileGraph);
+                            ArrayList newblends = new ArrayList();
+                            if (!chkAutoEdge.Checked)
                             {
-                                Point pat2 = new Point();
-                                pat2 = pat;
-                                pat2.X += j * 1;
-                                pat2.Y += j * 1;
-                                //pat2.X -= 1;
-                                pat2.Y -= 2;
-                                ushort variation = CreateVariation(pat2, (ushort)(tileVar.SelectedIndex-1), (byte)tileGraph);
-                                ArrayList newblends = new ArrayList();
-                                if (!chkAutoEdge.Checked)
+                                for (int ve = 0; ve < blendDialog.Blends.Count; ve++)
                                 {
-                                    for (int ve = 0; ve < blendDialog.Blends.Count; ve++)
-                                    {
-                                        Map.Tile.EdgeTile old = (Map.Tile.EdgeTile)blendDialog.Blends[ve];
-                                        Map.Tile.EdgeTile tr = new Map.Tile.EdgeTile(old.Graphic, (ushort)CreateVariation(pat2, (ushort)old.Variation, (byte)old.Graphic), old.Dir, old.Edge);
-                                        newblends.Add(tr);
-                                    }
+                                    Map.Tile.EdgeTile old = (Map.Tile.EdgeTile)blendDialog.Blends[ve];
+                                    Map.Tile.EdgeTile tr = new Map.Tile.EdgeTile(old.Graphic, (ushort)CreateVariation(pat2, (ushort)old.Variation, (byte)old.Graphic), old.Dir, old.Edge);
+                                    newblends.Add(tr);
                                 }
-                                tile = new Map.Tile(
-                                    new Point(pat2.X, pat2.Y),
-                                    (byte)tileGraph,//tileGraphic.SelectedIndex,
-                                    variation,
-                                    newblends
-                                    );
-                                if (!Map.Tiles.ContainsKey(tile.Location))
+                            }
+                            tile = new Map.Tile(
+                                new Point(pat2.X, pat2.Y),
+                                (byte)tileGraph,//tileGraphic.SelectedIndex,
+                                variation,
+                                newblends
+                                );
+                            if (!Map.Tiles.ContainsKey(tile.Location))
+                            {
+                                Map.Tiles.Add(tile.Location, tile);
+                                if (chkAutoEdge.Checked)
                                 {
-                                    Map.Tiles.Add(tile.Location, tile);
-                                    if (chkAutoEdge.Checked)
-                                    {
-                                        AutoEdge(tile.Location);
-                                    }
-                                    mainWindow.myMap.AddTile(tile.Graphic, pat2.Y, pat2.X, variation);
+                                    AutoEdge(tile.Location);
                                 }
+                                mainWindow.myMap.AddTile(tile.Graphic, pat2.Y, pat2.X, variation);
                             }
                         }
                     }
@@ -3095,24 +3071,21 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
                 mainWindow.myMap.RemoveTile(tilePt.X, tilePt.Y);
                 if (threeFloorBox.Checked)
                 {
-                    unsafe
+                    Point pat = new Point();
+                    int i = 0;
+                    int cols = 3;
+                    int rows = 3;
+                    for (pat = tilePt; i < rows; i++, pat.X--, pat.Y++)
                     {
-                        Point pat = new Point();
-                        int i = 0;
-                        int cols = 3;
-                        int rows = 3;
-                        for (pat = tilePt; i < rows; i++, pat.X--, pat.Y++)
+                        for (int j = 0; j < cols; j++)
                         {
-                            for (int j = 0; j < cols; j++)
-                            {
-                                Point pat2 = new Point();
-                                pat2 = pat;
-                                pat2.X += j * 1;
-                                pat2.Y += j * 1;
-                                pat2.Y -= 2;
-                                mainWindow.myMap.RemoveTile(pat2.X, pat2.Y);
-                                Map.Tiles.Remove(new Point(pat2.X, pat2.Y));
-                            }
+                            Point pat2 = new Point();
+                            pat2 = pat;
+                            pat2.X += j * 1;
+                            pat2.Y += j * 1;
+                            pat2.Y -= 2;
+                            mainWindow.myMap.RemoveTile(pat2.X, pat2.Y);
+                            Map.Tiles.Remove(new Point(pat2.X, pat2.Y));
                         }
                     }
                 }

@@ -186,6 +186,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ScriptFunctionList.cs" />
+    <Compile Include="scripts\functions\ScriptFunctionList.cs" />
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +361,63 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="scripts\functiondescs\aggressionlevel.rtf" />
+    <None Include="scripts\functiondescs\areownedby.rtf" />
+    <None Include="scripts\functiondescs\attack.rtf" />
+    <None Include="scripts\functiondescs\audioevent.rtf" />
+    <None Include="scripts\functiondescs\autosave.rtf" />
+    <None Include="scripts\functiondescs\awardspell.rtf" />
+    <None Include="scripts\functiondescs\becomeenemy.rtf" />
+    <None Include="scripts\functiondescs\becomepet.rtf" />
+    <None Include="scripts\functiondescs\blind.rtf" />
+    <None Include="scripts\functiondescs\effect.rtf" />
+    <None Include="scripts\objects\defaultmods\airshipbasket.txt" />
+    <None Include="scripts\objects\defaultmods\airshipbasketshadow.txt" />
+    <None Include="scripts\objects\defaultmods\airshipcaptain.txt" />
+    <None Include="scripts\objects\defaultmods\albinospider.txt" />
+    <None Include="scripts\objects\defaultmods\alchemistdesk1.txt" />
+    <None Include="scripts\objects\defaultmods\alchemistdesk2.txt" />
+    <None Include="scripts\objects\defaultmods\alchemistdesk3.txt" />
+    <None Include="scripts\objects\defaultmods\alchemistdesk4.txt" />
+    <None Include="scripts\objects\defaultmods\ambbeachbirds.txt" />
+    <None Include="scripts\objects\defaultmods\ambbeachwaves.txt" />
+    <None Include="scripts\objects\defaultmods\ambbird1.txt" />
+    <None Include="scripts\objects\defaultmods\ambbird2.txt" />
+    <None Include="scripts\objects\defaultmods\ambbird3.txt" />
+    <None Include="scripts\objects\defaultmods\ambbird4.txt" />
+    <None Include="scripts\objects\defaultmods\ambbird5.txt" />
+    <None Include="scripts\objects\defaultmods\ambbird6.txt" />
+    <None Include="scripts\objects\defaultmods\ambbird7.txt" />
+    <None Include="scripts\objects\defaultmods\ambbird8.txt" />
+    <None Include="scripts\objects\defaultmods\ambbirdswamp1.txt" />
+    <None Include="scripts\objects\defaultmods\ambbirdswamp2.txt" />
+    <None Include="scripts\objects\defaultmods\ambbrook1.txt" />
+    <None Include="scripts\objects\defaultmods\ambbrook2.txt" />
+    <None Include="scripts\objects\defaultmods\ambbrook3.txt" />
+    <None Include="scripts\objects\defaultmods\ambcaverumble.txt" />
+    <None Include="scripts\objects\defaultmods\ambcricket1.txt" />
+    <None Include="scripts\objects\defaultmods\ambcricket2.txt" />
+    <None Include="scripts\objects\defaultmods\ambcricket3.txt" />
+    <None Include="scripts\objects\defaultmods\ambcrow1.txt" />
+    <None Include="scripts\objects\defaultmods\ambcrow2.txt" />
+    <None Include="scripts\objects\defaultmods\ambcrowdbig.txt" />
+    <None Include="scripts\objects\defaultmods\ambcrowdsmall.txt" />
+    <None Include="scripts\objects\defaultmods\ambcrowwl.txt" />
+    <None Include="scripts\objects\defaultmods\ambdog1.txt" />
+    <None Include="scripts\objects\defaultmods\ambdripcave1.txt" />
+    <None Include="scripts\objects\defaultmods\ambdripcave2.txt" />
+    <None Include="scripts\objects\defaultmods\ambdriproom.txt" />
+    <None Include="scripts\objects\defaultmods\ambfliesswamp.txt" />
+    <None Include="scripts\objects\defaultmods\ambfrogswamp1.txt" />
+    <None Include="scripts\objects\defaultmods\ambfrogswamp2.txt" />
+    <None Include="scripts\objects\defaultmods\ambfrogswamp3.txt" />
+    <None Include="scripts\objects\defaultmods\ambfrogswamp4.txt" />
+    <None Include="scripts\objects\defaultmods\ambfrogswamp5.txt" />
+    <None Include="scripts\objects\defaultmods\ambheartnox.txt" />
+    <None Include="scripts\objects\defaultmods\ambhowls.txt" />
+    <None Include="scripts\objects\defaultmods\ambixtemple.txt" />
+    <None Include="scripts\objects\defaultmods\amblavabubbles.txt" />
+    <None Include="scripts\objects\defaultmods\amblavaflow.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ExportDialog.resx">
@@ -445,6 +503,13 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="scripts" />
+    <Folder Include="scripts\functiondescs" />
+    <Folder Include="scripts\functions" />
+    <Folder Include="scripts\objects" />
+    <Folder Include="scripts\objects\defaultmods" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

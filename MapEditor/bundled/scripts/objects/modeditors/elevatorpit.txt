@@ -1,3 +1,0 @@
-Elevator Destination
-INT
-0
