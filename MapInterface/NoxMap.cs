@@ -267,7 +267,17 @@ return(true);
 }*/
 public Bitmap GetObjectBitmap(string objName) 
 {
-	return Video.ExtractOne(ThingDb.Things[objName].PrettyImage);
+	var thing = ThingDb.Things[objName];
+	int img = thing.PrettyImage;
+	if(img == 0)
+	{
+		img = thing.MenuIcon;
+	}
+	if(img == 0 && thing.States.Count > 0)
+	{
+		img = thing.States[0].Animation.Frames[0];
+	}
+	return Video.ExtractOne(img);
 }
 public bool LoadObject(string objName, ref Bitmap surface)
 {
@@ -411,8 +421,6 @@ public bool AddObject(string objName, int X, int Y, int callback, int DoorFacing
 
 	if( img != null && img.Height >0 && img.Width >0)
 	{
-		surf = img;
-	}	
 			tem.surface =surf;
 			tem.Height = img.Height;
 			tem.Width = img.Width;
@@ -424,6 +432,7 @@ public bool AddObject(string objName, int X, int Y, int callback, int DoorFacing
 			//LOAD THE NAME AS WELL NOW!!!!!
 			Objects.ObjImages.Add(tem);
 			//test = tem.ms;
+	}	
 	
 		 @object.imgID = val;
 		 @object.objID = ObjNum;

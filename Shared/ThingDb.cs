@@ -857,9 +857,9 @@ namespace NoxShared
 						rdr.BaseStream.Seek((8 - rdr.BaseStream.Position % 8) % 8, SeekOrigin.Current);//SkipToNextBoundary
 					}
 					else if (line == "MENUICON")
-						rdr.ReadInt32();
+						this.MenuIcon = rdr.ReadInt32();
 					else if (line == "PRETTYIMAGE")
-						rdr.ReadInt32();
+						this.PrettyImage = rdr.ReadInt32();
 					else
 						Parse(line);
 				}
