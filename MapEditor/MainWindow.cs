@@ -91,7 +91,6 @@ namespace NoxMapEditor
 		private MenuItem templateMenu;
         private MenuItem exportImageMenu;
         private TabPage tabGUI;
-        private System.Windows.Forms.Timer timer1;
         private MenuItem menuItem1;
         private MenuItem menuItem2;
         private MenuItem menuItem3;
@@ -250,775 +249,768 @@ namespace NoxMapEditor
 
 		private void InitializeComponent()
 		{
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.menuFile = new System.Windows.Forms.MenuItem();
-            this.menuItemNew = new System.Windows.Forms.MenuItem();
-            this.menuItemOpen = new System.Windows.Forms.MenuItem();
-            this.menuItemSave = new System.Windows.Forms.MenuItem();
-            this.menuItemSaveAs = new System.Windows.Forms.MenuItem();
-            this.menuSeparator1 = new System.Windows.Forms.MenuItem();
-            this.menuItemExit = new System.Windows.Forms.MenuItem();
-            this.menuMap = new System.Windows.Forms.MenuItem();
-            this.viewObjects = new System.Windows.Forms.MenuItem();
-            this.menuItemStrings = new System.Windows.Forms.MenuItem();
-            this.menuItemGroups = new System.Windows.Forms.MenuItem();
-            this.exportMenu = new System.Windows.Forms.MenuItem();
-            this.importMenu = new System.Windows.Forms.MenuItem();
-            this.exportImageMenu = new System.Windows.Forms.MenuItem();
-            this.menuItem12 = new System.Windows.Forms.MenuItem();
-            this.menuItem21 = new System.Windows.Forms.MenuItem();
-            this.menuItem22 = new System.Windows.Forms.MenuItem();
-            this.menuOptions = new System.Windows.Forms.MenuItem();
-            this.menuItemGrid = new System.Windows.Forms.MenuItem();
-            this.menuItemNxz = new System.Windows.Forms.MenuItem();
-            this.langSelect = new System.Windows.Forms.MenuItem();
-            this.menuWallCoors = new System.Windows.Forms.MenuItem();
-            this.menuItem16 = new System.Windows.Forms.MenuItem();
-            this.menuHelp = new System.Windows.Forms.MenuItem();
-            this.menuItem18 = new System.Windows.Forms.MenuItem();
-            this.menuItemAbout = new System.Windows.Forms.MenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.largeMap = new System.Windows.Forms.TabPage();
-            this.WallViewer = new System.Windows.Forms.TabPage();
-            this.MinimapPanel = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkDevide2 = new System.Windows.Forms.CheckBox();
-            this.chkDevide = new System.Windows.Forms.CheckBox();
-            this.chkMass = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonCenter = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.questGraphic = new System.Windows.Forms.TextBox();
-            this.questTitle = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mapType = new System.Windows.Forms.ComboBox();
-            this.mapTypeLbl = new System.Windows.Forms.Label();
-            this.recommendedLbl = new System.Windows.Forms.Label();
-            this.maxRecLbl = new System.Windows.Forms.Label();
-            this.minRecLbl = new System.Windows.Forms.Label();
-            this.mapMaxRec = new System.Windows.Forms.TextBox();
-            this.mapMinRec = new System.Windows.Forms.TextBox();
-            this.mapCopyright = new System.Windows.Forms.TextBox();
-            this.labelCopyright = new System.Windows.Forms.Label();
-            this.mapVersion = new System.Windows.Forms.TextBox();
-            this.mapDate = new System.Windows.Forms.TextBox();
-            this.labelDate = new System.Windows.Forms.Label();
-            this.mapAuthor2 = new System.Windows.Forms.TextBox();
-            this.mapEmail2 = new System.Windows.Forms.TextBox();
-            this.mapEmail = new System.Windows.Forms.TextBox();
-            this.mapAuthor = new System.Windows.Forms.TextBox();
-            this.labelEmail2 = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.labelAuthor2 = new System.Windows.Forms.Label();
-            this.labelAuthor = new System.Windows.Forms.Label();
-            this.labelVersion = new System.Windows.Forms.Label();
-            this.mapDescription = new System.Windows.Forms.TextBox();
-            this.labelDescription = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.mapSummary = new System.Windows.Forms.TextBox();
-            this.tabGUI = new System.Windows.Forms.TabPage();
-            this.ToolPanel = new System.Windows.Forms.Panel();
-            this.chkShowNPC = new System.Windows.Forms.CheckBox();
-            this.GuiPanel = new System.Windows.Forms.Panel();
-            this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
-            this.templateMenu = new System.Windows.Forms.MenuItem();
-            this.menuItem20 = new System.Windows.Forms.MenuItem();
-            this.menuItem17 = new System.Windows.Forms.MenuItem();
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
-            this.menuItem2 = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.menuItem4 = new System.Windows.Forms.MenuItem();
-            this.menuItem5 = new System.Windows.Forms.MenuItem();
-            this.menuItem6 = new System.Windows.Forms.MenuItem();
-            this.menuItem7 = new System.Windows.Forms.MenuItem();
-            this.menuItem8 = new System.Windows.Forms.MenuItem();
-            this.menuItem9 = new System.Windows.Forms.MenuItem();
-            this.menuItem10 = new System.Windows.Forms.MenuItem();
-            this.menuItem11 = new System.Windows.Forms.MenuItem();
-            this.menuItem19 = new System.Windows.Forms.MenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.mapView = new NoxMapEditor.MapView();
-            this.tabControl1.SuspendLayout();
-            this.largeMap.SuspendLayout();
-            this.WallViewer.SuspendLayout();
-            this.MinimapPanel.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tabGUI.SuspendLayout();
-            this.ToolPanel.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // menuFile
-            // 
-            this.menuFile.Index = 0;
-            this.menuFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemNew,
-            this.menuItemOpen,
-            this.menuItemSave,
-            this.menuItemSaveAs,
-            this.menuSeparator1,
-            this.menuItemExit});
-            resources.ApplyResources(this.menuFile, "menuFile");
-            // 
-            // menuItemNew
-            // 
-            this.menuItemNew.Index = 0;
-            resources.ApplyResources(this.menuItemNew, "menuItemNew");
-            this.menuItemNew.Click += new System.EventHandler(this.menuItemNew_Click);
-            // 
-            // menuItemOpen
-            // 
-            this.menuItemOpen.Index = 1;
-            resources.ApplyResources(this.menuItemOpen, "menuItemOpen");
-            this.menuItemOpen.Click += new System.EventHandler(this.menuItemOpen_Click);
-            // 
-            // menuItemSave
-            // 
-            this.menuItemSave.Index = 2;
-            resources.ApplyResources(this.menuItemSave, "menuItemSave");
-            this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
-            // 
-            // menuItemSaveAs
-            // 
-            this.menuItemSaveAs.Index = 3;
-            resources.ApplyResources(this.menuItemSaveAs, "menuItemSaveAs");
-            this.menuItemSaveAs.Click += new System.EventHandler(this.menuItemSaveAs_Click);
-            // 
-            // menuSeparator1
-            // 
-            this.menuSeparator1.Index = 4;
-            resources.ApplyResources(this.menuSeparator1, "menuSeparator1");
-            // 
-            // menuItemExit
-            // 
-            this.menuItemExit.Index = 5;
-            resources.ApplyResources(this.menuItemExit, "menuItemExit");
-            this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
-            // 
-            // menuMap
-            // 
-            this.menuMap.Index = 1;
-            this.menuMap.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.viewObjects,
-            this.menuItemStrings,
-            this.menuItemGroups,
-            this.exportMenu,
-            this.importMenu,
-            this.exportImageMenu,
-            this.menuItem12,
-            this.menuItem21});
-            resources.ApplyResources(this.menuMap, "menuMap");
-            // 
-            // viewObjects
-            // 
-            this.viewObjects.Index = 0;
-            resources.ApplyResources(this.viewObjects, "viewObjects");
-            this.viewObjects.Click += new System.EventHandler(this.viewObjects_Click);
-            // 
-            // menuItemStrings
-            // 
-            this.menuItemStrings.Index = 1;
-            resources.ApplyResources(this.menuItemStrings, "menuItemStrings");
-            this.menuItemStrings.Click += new System.EventHandler(this.menuItemStrings_Click);
-            // 
-            // menuItemGroups
-            // 
-            this.menuItemGroups.Index = 2;
-            resources.ApplyResources(this.menuItemGroups, "menuItemGroups");
-            this.menuItemGroups.Click += new System.EventHandler(this.menuItemGroups_Click);
-            // 
-            // exportMenu
-            // 
-            this.exportMenu.Index = 3;
-            resources.ApplyResources(this.exportMenu, "exportMenu");
-            this.exportMenu.Click += new System.EventHandler(this.exportMenu_Click);
-            // 
-            // importMenu
-            // 
-            this.importMenu.Index = 4;
-            resources.ApplyResources(this.importMenu, "importMenu");
-            this.importMenu.Click += new System.EventHandler(this.importMenu_Click);
-            // 
-            // exportImageMenu
-            // 
-            this.exportImageMenu.Index = 5;
-            resources.ApplyResources(this.exportImageMenu, "exportImageMenu");
-            this.exportImageMenu.Click += new System.EventHandler(this.exportImageMenu_Click);
-            // 
-            // menuItem12
-            // 
-            this.menuItem12.Index = 6;
-            resources.ApplyResources(this.menuItem12, "menuItem12");
-            this.menuItem12.Click += new System.EventHandler(this.menuItem12_Click);
-            // 
-            // menuItem21
-            // 
-            this.menuItem21.Index = 7;
-            this.menuItem21.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem22});
-            resources.ApplyResources(this.menuItem21, "menuItem21");
-            // 
-            // menuItem22
-            // 
-            this.menuItem22.Index = 0;
-            resources.ApplyResources(this.menuItem22, "menuItem22");
-            this.menuItem22.Click += new System.EventHandler(this.menuItem22_Click);
-            // 
-            // menuOptions
-            // 
-            this.menuOptions.Index = 2;
-            this.menuOptions.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemGrid,
-            this.menuItemNxz,
-            this.langSelect,
-            this.menuWallCoors,
-            this.menuItem16});
-            resources.ApplyResources(this.menuOptions, "menuOptions");
-            // 
-            // menuItemGrid
-            // 
-            this.menuItemGrid.Index = 0;
-            resources.ApplyResources(this.menuItemGrid, "menuItemGrid");
-            this.menuItemGrid.Click += new System.EventHandler(this.menuItemGrid_Click);
-            // 
-            // menuItemNxz
-            // 
-            this.menuItemNxz.Checked = true;
-            this.menuItemNxz.Index = 1;
-            resources.ApplyResources(this.menuItemNxz, "menuItemNxz");
-            this.menuItemNxz.Click += new System.EventHandler(this.menuItemNxz_Click);
-            // 
-            // langSelect
-            // 
-            this.langSelect.Index = 2;
-            resources.ApplyResources(this.langSelect, "langSelect");
-            this.langSelect.Popup += new System.EventHandler(this.langSelect_Popup);
-            // 
-            // menuWallCoors
-            // 
-            this.menuWallCoors.Index = 3;
-            resources.ApplyResources(this.menuWallCoors, "menuWallCoors");
-            this.menuWallCoors.Click += new System.EventHandler(this.menuWallCoors_Click);
-            // 
-            // menuItem16
-            // 
-            this.menuItem16.Index = 4;
-            resources.ApplyResources(this.menuItem16, "menuItem16");
-            this.menuItem16.Click += new System.EventHandler(this.menuItem16_Click);
-            // 
-            // menuHelp
-            // 
-            this.menuHelp.Index = 3;
-            this.menuHelp.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem18,
-            this.menuItemAbout});
-            resources.ApplyResources(this.menuHelp, "menuHelp");
-            // 
-            // menuItem18
-            // 
-            this.menuItem18.Index = 0;
-            resources.ApplyResources(this.menuItem18, "menuItem18");
-            this.menuItem18.Click += new System.EventHandler(this.menuItem18_Click);
-            // 
-            // menuItemAbout
-            // 
-            this.menuItemAbout.Index = 1;
-            resources.ApplyResources(this.menuItemAbout, "menuItemAbout");
-            this.menuItemAbout.Click += new System.EventHandler(this.menuItemAbout_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.largeMap);
-            this.tabControl1.Controls.Add(this.WallViewer);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabGUI);
-            resources.ApplyResources(this.tabControl1, "tabControl1");
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Resize += new System.EventHandler(this.tabGUI_Resize);
-            // 
-            // largeMap
-            // 
-            this.largeMap.Controls.Add(this.mapView);
-            resources.ApplyResources(this.largeMap, "largeMap");
-            this.largeMap.Name = "largeMap";
-            this.largeMap.UseVisualStyleBackColor = true;
-            // 
-            // WallViewer
-            // 
-            this.WallViewer.Controls.Add(this.MinimapPanel);
-            resources.ApplyResources(this.WallViewer, "WallViewer");
-            this.WallViewer.Name = "WallViewer";
-            this.WallViewer.UseVisualStyleBackColor = true;
-            // 
-            // MinimapPanel
-            // 
-            this.MinimapPanel.Controls.Add(this.groupBox2);
-            this.MinimapPanel.Controls.Add(this.panel1);
-            resources.ApplyResources(this.MinimapPanel, "MinimapPanel");
-            this.MinimapPanel.Name = "MinimapPanel";
-            this.MinimapPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimapPanel_Paint);
-            this.MinimapPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinimapPanel_MouseDown);
-            // 
-            // groupBox2
-            // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Controls.Add(this.chkDevide2);
-            this.groupBox2.Controls.Add(this.chkDevide);
-            this.groupBox2.Controls.Add(this.chkMass);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.buttonCenter);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
-            // chkDevide2
-            // 
-            resources.ApplyResources(this.chkDevide2, "chkDevide2");
-            this.chkDevide2.Name = "chkDevide2";
-            this.chkDevide2.UseVisualStyleBackColor = true;
-            this.chkDevide2.CheckedChanged += new System.EventHandler(this.chkDevide2_CheckedChanged);
-            // 
-            // chkDevide
-            // 
-            resources.ApplyResources(this.chkDevide, "chkDevide");
-            this.chkDevide.Name = "chkDevide";
-            this.chkDevide.UseVisualStyleBackColor = true;
-            this.chkDevide.CheckedChanged += new System.EventHandler(this.chkDevide_CheckedChanged);
-            // 
-            // chkMass
-            // 
-            resources.ApplyResources(this.chkMass, "chkMass");
-            this.chkMass.Name = "chkMass";
-            this.chkMass.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseMnemonic = false;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonCenter
-            // 
-            resources.ApplyResources(this.buttonCenter, "buttonCenter");
-            this.buttonCenter.Name = "buttonCenter";
-            this.buttonCenter.UseVisualStyleBackColor = true;
-            this.buttonCenter.Click += new System.EventHandler(this.buttonCenter_Click);
-            // 
-            // panel1
-            // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Name = "panel1";
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.questGraphic);
-            this.groupBox1.Controls.Add(this.questTitle);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.mapType);
-            this.groupBox1.Controls.Add(this.mapTypeLbl);
-            this.groupBox1.Controls.Add(this.recommendedLbl);
-            this.groupBox1.Controls.Add(this.maxRecLbl);
-            this.groupBox1.Controls.Add(this.minRecLbl);
-            this.groupBox1.Controls.Add(this.mapMaxRec);
-            this.groupBox1.Controls.Add(this.mapMinRec);
-            this.groupBox1.Controls.Add(this.mapCopyright);
-            this.groupBox1.Controls.Add(this.labelCopyright);
-            this.groupBox1.Controls.Add(this.mapVersion);
-            this.groupBox1.Controls.Add(this.mapDate);
-            this.groupBox1.Controls.Add(this.labelDate);
-            this.groupBox1.Controls.Add(this.mapAuthor2);
-            this.groupBox1.Controls.Add(this.mapEmail2);
-            this.groupBox1.Controls.Add(this.mapEmail);
-            this.groupBox1.Controls.Add(this.mapAuthor);
-            this.groupBox1.Controls.Add(this.labelEmail2);
-            this.groupBox1.Controls.Add(this.labelEmail);
-            this.groupBox1.Controls.Add(this.labelAuthor2);
-            this.groupBox1.Controls.Add(this.labelAuthor);
-            this.groupBox1.Controls.Add(this.labelVersion);
-            this.groupBox1.Controls.Add(this.mapDescription);
-            this.groupBox1.Controls.Add(this.labelDescription);
-            this.groupBox1.Controls.Add(this.labelTitle);
-            this.groupBox1.Controls.Add(this.mapSummary);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            // 
-            // questGraphic
-            // 
-            resources.ApplyResources(this.questGraphic, "questGraphic");
-            this.questGraphic.Name = "questGraphic";
-            // 
-            // questTitle
-            // 
-            resources.ApplyResources(this.questTitle, "questTitle");
-            this.questTitle.Name = "questTitle";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // mapType
-            // 
-            this.mapType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.mapType.FormattingEnabled = true;
-            resources.ApplyResources(this.mapType, "mapType");
-            this.mapType.Name = "mapType";
-            // 
-            // mapTypeLbl
-            // 
-            resources.ApplyResources(this.mapTypeLbl, "mapTypeLbl");
-            this.mapTypeLbl.Name = "mapTypeLbl";
-            // 
-            // recommendedLbl
-            // 
-            resources.ApplyResources(this.recommendedLbl, "recommendedLbl");
-            this.recommendedLbl.Name = "recommendedLbl";
-            // 
-            // maxRecLbl
-            // 
-            resources.ApplyResources(this.maxRecLbl, "maxRecLbl");
-            this.maxRecLbl.Name = "maxRecLbl";
-            // 
-            // minRecLbl
-            // 
-            resources.ApplyResources(this.minRecLbl, "minRecLbl");
-            this.minRecLbl.Name = "minRecLbl";
-            // 
-            // mapMaxRec
-            // 
-            resources.ApplyResources(this.mapMaxRec, "mapMaxRec");
-            this.mapMaxRec.Name = "mapMaxRec";
-            // 
-            // mapMinRec
-            // 
-            resources.ApplyResources(this.mapMinRec, "mapMinRec");
-            this.mapMinRec.Name = "mapMinRec";
-            // 
-            // mapCopyright
-            // 
-            resources.ApplyResources(this.mapCopyright, "mapCopyright");
-            this.mapCopyright.Name = "mapCopyright";
-            // 
-            // labelCopyright
-            // 
-            resources.ApplyResources(this.labelCopyright, "labelCopyright");
-            this.labelCopyright.Name = "labelCopyright";
-            // 
-            // mapVersion
-            // 
-            resources.ApplyResources(this.mapVersion, "mapVersion");
-            this.mapVersion.Name = "mapVersion";
-            // 
-            // mapDate
-            // 
-            resources.ApplyResources(this.mapDate, "mapDate");
-            this.mapDate.Name = "mapDate";
-            // 
-            // labelDate
-            // 
-            resources.ApplyResources(this.labelDate, "labelDate");
-            this.labelDate.Name = "labelDate";
-            // 
-            // mapAuthor2
-            // 
-            resources.ApplyResources(this.mapAuthor2, "mapAuthor2");
-            this.mapAuthor2.Name = "mapAuthor2";
-            // 
-            // mapEmail2
-            // 
-            resources.ApplyResources(this.mapEmail2, "mapEmail2");
-            this.mapEmail2.Name = "mapEmail2";
-            // 
-            // mapEmail
-            // 
-            resources.ApplyResources(this.mapEmail, "mapEmail");
-            this.mapEmail.Name = "mapEmail";
-            // 
-            // mapAuthor
-            // 
-            resources.ApplyResources(this.mapAuthor, "mapAuthor");
-            this.mapAuthor.Name = "mapAuthor";
-            // 
-            // labelEmail2
-            // 
-            resources.ApplyResources(this.labelEmail2, "labelEmail2");
-            this.labelEmail2.Name = "labelEmail2";
-            // 
-            // labelEmail
-            // 
-            resources.ApplyResources(this.labelEmail, "labelEmail");
-            this.labelEmail.Name = "labelEmail";
-            // 
-            // labelAuthor2
-            // 
-            resources.ApplyResources(this.labelAuthor2, "labelAuthor2");
-            this.labelAuthor2.Name = "labelAuthor2";
-            // 
-            // labelAuthor
-            // 
-            resources.ApplyResources(this.labelAuthor, "labelAuthor");
-            this.labelAuthor.Name = "labelAuthor";
-            // 
-            // labelVersion
-            // 
-            resources.ApplyResources(this.labelVersion, "labelVersion");
-            this.labelVersion.Name = "labelVersion";
-            // 
-            // mapDescription
-            // 
-            resources.ApplyResources(this.mapDescription, "mapDescription");
-            this.mapDescription.Name = "mapDescription";
-            // 
-            // labelDescription
-            // 
-            resources.ApplyResources(this.labelDescription, "labelDescription");
-            this.labelDescription.Name = "labelDescription";
-            // 
-            // labelTitle
-            // 
-            resources.ApplyResources(this.labelTitle, "labelTitle");
-            this.labelTitle.Name = "labelTitle";
-            // 
-            // mapSummary
-            // 
-            resources.ApplyResources(this.mapSummary, "mapSummary");
-            this.mapSummary.Name = "mapSummary";
-            // 
-            // tabGUI
-            // 
-            this.tabGUI.Controls.Add(this.ToolPanel);
-            this.tabGUI.Controls.Add(this.GuiPanel);
-            resources.ApplyResources(this.tabGUI, "tabGUI");
-            this.tabGUI.Name = "tabGUI";
-            this.tabGUI.UseVisualStyleBackColor = true;
-            this.tabGUI.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabGUI_MouseMove);
-            this.tabGUI.Leave += new System.EventHandler(this.tabGUI_Leave);
-            this.tabGUI.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabGUI_MouseDown);
-            this.tabGUI.Resize += new System.EventHandler(this.tabGUI_Resize);
-            this.tabGUI.Enter += new System.EventHandler(this.tabGUI_Enter);
-            this.tabGUI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tabGUI_MouseUp);
-            // 
-            // ToolPanel
-            // 
-            this.ToolPanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ToolPanel.Controls.Add(this.chkShowNPC);
-            resources.ApplyResources(this.ToolPanel, "ToolPanel");
-            this.ToolPanel.Name = "ToolPanel";
-            // 
-            // chkShowNPC
-            // 
-            resources.ApplyResources(this.chkShowNPC, "chkShowNPC");
-            this.chkShowNPC.Name = "chkShowNPC";
-            this.chkShowNPC.UseVisualStyleBackColor = true;
-            this.chkShowNPC.CheckedChanged += new System.EventHandler(this.chkShowNPC_CheckedChanged);
-            // 
-            // GuiPanel
-            // 
-            resources.ApplyResources(this.GuiPanel, "GuiPanel");
-            this.GuiPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.GuiPanel.Name = "GuiPanel";
-            this.GuiPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.GuiPanel_Paint);
-            this.GuiPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GuiPanel_MouseMove);
-            this.GuiPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GuiPanel_MouseDown);
-            this.GuiPanel.Resize += new System.EventHandler(this.GuiPanel_Resize);
-            this.GuiPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GuiPanel_MouseUp);
-            // 
-            // mainMenu1
-            // 
-            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuFile,
-            this.menuMap,
-            this.menuOptions,
-            this.menuHelp,
-            this.templateMenu,
-            this.menuItem1});
-            // 
-            // templateMenu
-            // 
-            this.templateMenu.Index = 4;
-            this.templateMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem20,
-            this.menuItem17});
-            resources.ApplyResources(this.templateMenu, "templateMenu");
-            // 
-            // menuItem20
-            // 
-            this.menuItem20.Index = 0;
-            resources.ApplyResources(this.menuItem20, "menuItem20");
-            this.menuItem20.Click += new System.EventHandler(this.menuItem20_Click);
-            // 
-            // menuItem17
-            // 
-            this.menuItem17.Index = 1;
-            resources.ApplyResources(this.menuItem17, "menuItem17");
-            this.menuItem17.Click += new System.EventHandler(this.menuItem17_Click_1);
-            // 
-            // menuItem1
-            // 
-            this.menuItem1.Index = 5;
-            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem2,
-            this.menuItem19});
-            resources.ApplyResources(this.menuItem1, "menuItem1");
-            // 
-            // menuItem2
-            // 
-            this.menuItem2.Index = 0;
-            this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem3,
-            this.menuItem8});
-            resources.ApplyResources(this.menuItem2, "menuItem2");
-            // 
-            // menuItem3
-            // 
-            this.menuItem3.Index = 0;
-            this.menuItem3.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem4,
-            this.menuItem5,
-            this.menuItem6,
-            this.menuItem7});
-            resources.ApplyResources(this.menuItem3, "menuItem3");
-            // 
-            // menuItem4
-            // 
-            this.menuItem4.Index = 0;
-            resources.ApplyResources(this.menuItem4, "menuItem4");
-            this.menuItem4.Click += new System.EventHandler(this.menuItem4_Click);
-            // 
-            // menuItem5
-            // 
-            this.menuItem5.Index = 1;
-            resources.ApplyResources(this.menuItem5, "menuItem5");
-            this.menuItem5.Click += new System.EventHandler(this.menuItem5_Click);
-            // 
-            // menuItem6
-            // 
-            this.menuItem6.Index = 2;
-            resources.ApplyResources(this.menuItem6, "menuItem6");
-            this.menuItem6.Click += new System.EventHandler(this.menuItem6_Click);
-            // 
-            // menuItem7
-            // 
-            this.menuItem7.Index = 3;
-            resources.ApplyResources(this.menuItem7, "menuItem7");
-            this.menuItem7.Click += new System.EventHandler(this.menuItem7_Click);
-            // 
-            // menuItem8
-            // 
-            this.menuItem8.Index = 1;
-            this.menuItem8.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem9,
-            this.menuItem10,
-            this.menuItem11});
-            resources.ApplyResources(this.menuItem8, "menuItem8");
-            // 
-            // menuItem9
-            // 
-            this.menuItem9.Index = 0;
-            resources.ApplyResources(this.menuItem9, "menuItem9");
-            this.menuItem9.Click += new System.EventHandler(this.menuItem9_Click);
-            // 
-            // menuItem10
-            // 
-            this.menuItem10.Checked = true;
-            this.menuItem10.Index = 1;
-            resources.ApplyResources(this.menuItem10, "menuItem10");
-            this.menuItem10.Click += new System.EventHandler(this.menuItem10_Click);
-            // 
-            // menuItem11
-            // 
-            this.menuItem11.Index = 2;
-            resources.ApplyResources(this.menuItem11, "menuItem11");
-            this.menuItem11.Click += new System.EventHandler(this.menuItem11_Click);
-            // 
-            // menuItem19
-            // 
-            this.menuItem19.Index = 1;
-            resources.ApplyResources(this.menuItem19, "menuItem19");
-            this.menuItem19.Click += new System.EventHandler(this.menuItem19_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 33;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // mapView
-            // 
-            resources.ApplyResources(this.mapView, "mapView");
-            this.mapView.Name = "mapView";
-            // 
-            // MainWindow
-            // 
-            resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.tabControl1);
-            this.Menu = this.mainMenu1;
-            this.Name = "MainWindow";
-            this.Load += new System.EventHandler(this.MainWindow_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyUp);
-            this.Move += new System.EventHandler(this.MainWindow_Move);
-            this.tabControl1.ResumeLayout(false);
-            this.largeMap.ResumeLayout(false);
-            this.WallViewer.ResumeLayout(false);
-            this.MinimapPanel.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tabGUI.ResumeLayout(false);
-            this.ToolPanel.ResumeLayout(false);
-            this.ToolPanel.PerformLayout();
-            this.ResumeLayout(false);
-
+			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+			this.menuFile = new System.Windows.Forms.MenuItem();
+			this.menuItemNew = new System.Windows.Forms.MenuItem();
+			this.menuItemOpen = new System.Windows.Forms.MenuItem();
+			this.menuItemSave = new System.Windows.Forms.MenuItem();
+			this.menuItemSaveAs = new System.Windows.Forms.MenuItem();
+			this.menuSeparator1 = new System.Windows.Forms.MenuItem();
+			this.menuItemExit = new System.Windows.Forms.MenuItem();
+			this.menuMap = new System.Windows.Forms.MenuItem();
+			this.viewObjects = new System.Windows.Forms.MenuItem();
+			this.menuItemStrings = new System.Windows.Forms.MenuItem();
+			this.menuItemGroups = new System.Windows.Forms.MenuItem();
+			this.exportMenu = new System.Windows.Forms.MenuItem();
+			this.importMenu = new System.Windows.Forms.MenuItem();
+			this.exportImageMenu = new System.Windows.Forms.MenuItem();
+			this.menuItem12 = new System.Windows.Forms.MenuItem();
+			this.menuItem21 = new System.Windows.Forms.MenuItem();
+			this.menuItem22 = new System.Windows.Forms.MenuItem();
+			this.menuOptions = new System.Windows.Forms.MenuItem();
+			this.menuItemGrid = new System.Windows.Forms.MenuItem();
+			this.menuItemNxz = new System.Windows.Forms.MenuItem();
+			this.langSelect = new System.Windows.Forms.MenuItem();
+			this.menuWallCoors = new System.Windows.Forms.MenuItem();
+			this.menuItem16 = new System.Windows.Forms.MenuItem();
+			this.menuHelp = new System.Windows.Forms.MenuItem();
+			this.menuItem18 = new System.Windows.Forms.MenuItem();
+			this.menuItemAbout = new System.Windows.Forms.MenuItem();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.largeMap = new System.Windows.Forms.TabPage();
+			this.mapView = new NoxMapEditor.MapView();
+			this.WallViewer = new System.Windows.Forms.TabPage();
+			this.MinimapPanel = new System.Windows.Forms.Panel();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.chkDevide2 = new System.Windows.Forms.CheckBox();
+			this.chkDevide = new System.Windows.Forms.CheckBox();
+			this.chkMass = new System.Windows.Forms.CheckBox();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
+			this.buttonCenter = new System.Windows.Forms.Button();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.questGraphic = new System.Windows.Forms.TextBox();
+			this.questTitle = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.mapType = new System.Windows.Forms.ComboBox();
+			this.mapTypeLbl = new System.Windows.Forms.Label();
+			this.recommendedLbl = new System.Windows.Forms.Label();
+			this.maxRecLbl = new System.Windows.Forms.Label();
+			this.minRecLbl = new System.Windows.Forms.Label();
+			this.mapMaxRec = new System.Windows.Forms.TextBox();
+			this.mapMinRec = new System.Windows.Forms.TextBox();
+			this.mapCopyright = new System.Windows.Forms.TextBox();
+			this.labelCopyright = new System.Windows.Forms.Label();
+			this.mapVersion = new System.Windows.Forms.TextBox();
+			this.mapDate = new System.Windows.Forms.TextBox();
+			this.labelDate = new System.Windows.Forms.Label();
+			this.mapAuthor2 = new System.Windows.Forms.TextBox();
+			this.mapEmail2 = new System.Windows.Forms.TextBox();
+			this.mapEmail = new System.Windows.Forms.TextBox();
+			this.mapAuthor = new System.Windows.Forms.TextBox();
+			this.labelEmail2 = new System.Windows.Forms.Label();
+			this.labelEmail = new System.Windows.Forms.Label();
+			this.labelAuthor2 = new System.Windows.Forms.Label();
+			this.labelAuthor = new System.Windows.Forms.Label();
+			this.labelVersion = new System.Windows.Forms.Label();
+			this.mapDescription = new System.Windows.Forms.TextBox();
+			this.labelDescription = new System.Windows.Forms.Label();
+			this.labelTitle = new System.Windows.Forms.Label();
+			this.mapSummary = new System.Windows.Forms.TextBox();
+			this.tabGUI = new System.Windows.Forms.TabPage();
+			this.ToolPanel = new System.Windows.Forms.Panel();
+			this.chkShowNPC = new System.Windows.Forms.CheckBox();
+			this.GuiPanel = new System.Windows.Forms.Panel();
+			this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
+			this.templateMenu = new System.Windows.Forms.MenuItem();
+			this.menuItem20 = new System.Windows.Forms.MenuItem();
+			this.menuItem17 = new System.Windows.Forms.MenuItem();
+			this.menuItem1 = new System.Windows.Forms.MenuItem();
+			this.menuItem2 = new System.Windows.Forms.MenuItem();
+			this.menuItem3 = new System.Windows.Forms.MenuItem();
+			this.menuItem4 = new System.Windows.Forms.MenuItem();
+			this.menuItem5 = new System.Windows.Forms.MenuItem();
+			this.menuItem6 = new System.Windows.Forms.MenuItem();
+			this.menuItem7 = new System.Windows.Forms.MenuItem();
+			this.menuItem8 = new System.Windows.Forms.MenuItem();
+			this.menuItem9 = new System.Windows.Forms.MenuItem();
+			this.menuItem10 = new System.Windows.Forms.MenuItem();
+			this.menuItem11 = new System.Windows.Forms.MenuItem();
+			this.menuItem19 = new System.Windows.Forms.MenuItem();
+			this.tabControl1.SuspendLayout();
+			this.largeMap.SuspendLayout();
+			this.WallViewer.SuspendLayout();
+			this.MinimapPanel.SuspendLayout();
+			this.groupBox2.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			this.groupBox1.SuspendLayout();
+			this.tabGUI.SuspendLayout();
+			this.ToolPanel.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// menuFile
+			// 
+			this.menuFile.Index = 0;
+			this.menuFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItemNew,
+									this.menuItemOpen,
+									this.menuItemSave,
+									this.menuItemSaveAs,
+									this.menuSeparator1,
+									this.menuItemExit});
+			resources.ApplyResources(this.menuFile, "menuFile");
+			// 
+			// menuItemNew
+			// 
+			this.menuItemNew.Index = 0;
+			resources.ApplyResources(this.menuItemNew, "menuItemNew");
+			this.menuItemNew.Click += new System.EventHandler(this.menuItemNew_Click);
+			// 
+			// menuItemOpen
+			// 
+			this.menuItemOpen.Index = 1;
+			resources.ApplyResources(this.menuItemOpen, "menuItemOpen");
+			this.menuItemOpen.Click += new System.EventHandler(this.menuItemOpen_Click);
+			// 
+			// menuItemSave
+			// 
+			this.menuItemSave.Index = 2;
+			resources.ApplyResources(this.menuItemSave, "menuItemSave");
+			this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
+			// 
+			// menuItemSaveAs
+			// 
+			this.menuItemSaveAs.Index = 3;
+			resources.ApplyResources(this.menuItemSaveAs, "menuItemSaveAs");
+			this.menuItemSaveAs.Click += new System.EventHandler(this.menuItemSaveAs_Click);
+			// 
+			// menuSeparator1
+			// 
+			this.menuSeparator1.Index = 4;
+			resources.ApplyResources(this.menuSeparator1, "menuSeparator1");
+			// 
+			// menuItemExit
+			// 
+			this.menuItemExit.Index = 5;
+			resources.ApplyResources(this.menuItemExit, "menuItemExit");
+			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
+			// 
+			// menuMap
+			// 
+			this.menuMap.Index = 1;
+			this.menuMap.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.viewObjects,
+									this.menuItemStrings,
+									this.menuItemGroups,
+									this.exportMenu,
+									this.importMenu,
+									this.exportImageMenu,
+									this.menuItem12,
+									this.menuItem21});
+			resources.ApplyResources(this.menuMap, "menuMap");
+			// 
+			// viewObjects
+			// 
+			this.viewObjects.Index = 0;
+			resources.ApplyResources(this.viewObjects, "viewObjects");
+			this.viewObjects.Click += new System.EventHandler(this.viewObjects_Click);
+			// 
+			// menuItemStrings
+			// 
+			this.menuItemStrings.Index = 1;
+			resources.ApplyResources(this.menuItemStrings, "menuItemStrings");
+			this.menuItemStrings.Click += new System.EventHandler(this.menuItemStrings_Click);
+			// 
+			// menuItemGroups
+			// 
+			this.menuItemGroups.Index = 2;
+			resources.ApplyResources(this.menuItemGroups, "menuItemGroups");
+			this.menuItemGroups.Click += new System.EventHandler(this.menuItemGroups_Click);
+			// 
+			// exportMenu
+			// 
+			this.exportMenu.Index = 3;
+			resources.ApplyResources(this.exportMenu, "exportMenu");
+			this.exportMenu.Click += new System.EventHandler(this.exportMenu_Click);
+			// 
+			// importMenu
+			// 
+			this.importMenu.Index = 4;
+			resources.ApplyResources(this.importMenu, "importMenu");
+			this.importMenu.Click += new System.EventHandler(this.importMenu_Click);
+			// 
+			// exportImageMenu
+			// 
+			this.exportImageMenu.Index = 5;
+			resources.ApplyResources(this.exportImageMenu, "exportImageMenu");
+			this.exportImageMenu.Click += new System.EventHandler(this.exportImageMenu_Click);
+			// 
+			// menuItem12
+			// 
+			this.menuItem12.Index = 6;
+			resources.ApplyResources(this.menuItem12, "menuItem12");
+			this.menuItem12.Click += new System.EventHandler(this.menuItem12_Click);
+			// 
+			// menuItem21
+			// 
+			this.menuItem21.Index = 7;
+			this.menuItem21.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItem22});
+			resources.ApplyResources(this.menuItem21, "menuItem21");
+			// 
+			// menuItem22
+			// 
+			this.menuItem22.Index = 0;
+			resources.ApplyResources(this.menuItem22, "menuItem22");
+			this.menuItem22.Click += new System.EventHandler(this.menuItem22_Click);
+			// 
+			// menuOptions
+			// 
+			this.menuOptions.Index = 2;
+			this.menuOptions.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItemGrid,
+									this.menuItemNxz,
+									this.langSelect,
+									this.menuWallCoors,
+									this.menuItem16});
+			resources.ApplyResources(this.menuOptions, "menuOptions");
+			// 
+			// menuItemGrid
+			// 
+			this.menuItemGrid.Index = 0;
+			resources.ApplyResources(this.menuItemGrid, "menuItemGrid");
+			this.menuItemGrid.Click += new System.EventHandler(this.menuItemGrid_Click);
+			// 
+			// menuItemNxz
+			// 
+			this.menuItemNxz.Checked = true;
+			this.menuItemNxz.Index = 1;
+			resources.ApplyResources(this.menuItemNxz, "menuItemNxz");
+			this.menuItemNxz.Click += new System.EventHandler(this.menuItemNxz_Click);
+			// 
+			// langSelect
+			// 
+			this.langSelect.Index = 2;
+			resources.ApplyResources(this.langSelect, "langSelect");
+			this.langSelect.Popup += new System.EventHandler(this.langSelect_Popup);
+			// 
+			// menuWallCoors
+			// 
+			this.menuWallCoors.Index = 3;
+			resources.ApplyResources(this.menuWallCoors, "menuWallCoors");
+			this.menuWallCoors.Click += new System.EventHandler(this.menuWallCoors_Click);
+			// 
+			// menuItem16
+			// 
+			this.menuItem16.Index = 4;
+			resources.ApplyResources(this.menuItem16, "menuItem16");
+			this.menuItem16.Click += new System.EventHandler(this.menuItem16_Click);
+			// 
+			// menuHelp
+			// 
+			this.menuHelp.Index = 3;
+			this.menuHelp.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItem18,
+									this.menuItemAbout});
+			resources.ApplyResources(this.menuHelp, "menuHelp");
+			// 
+			// menuItem18
+			// 
+			this.menuItem18.Index = 0;
+			resources.ApplyResources(this.menuItem18, "menuItem18");
+			this.menuItem18.Click += new System.EventHandler(this.menuItem18_Click);
+			// 
+			// menuItemAbout
+			// 
+			this.menuItemAbout.Index = 1;
+			resources.ApplyResources(this.menuItemAbout, "menuItemAbout");
+			this.menuItemAbout.Click += new System.EventHandler(this.menuItemAbout_Click);
+			// 
+			// tabControl1
+			// 
+			this.tabControl1.Controls.Add(this.largeMap);
+			this.tabControl1.Controls.Add(this.WallViewer);
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabGUI);
+			resources.ApplyResources(this.tabControl1, "tabControl1");
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Resize += new System.EventHandler(this.tabGUI_Resize);
+			// 
+			// largeMap
+			// 
+			this.largeMap.Controls.Add(this.mapView);
+			resources.ApplyResources(this.largeMap, "largeMap");
+			this.largeMap.Name = "largeMap";
+			this.largeMap.UseVisualStyleBackColor = true;
+			// 
+			// mapView
+			// 
+			resources.ApplyResources(this.mapView, "mapView");
+			this.mapView.Name = "mapView";
+			// 
+			// WallViewer
+			// 
+			this.WallViewer.Controls.Add(this.MinimapPanel);
+			resources.ApplyResources(this.WallViewer, "WallViewer");
+			this.WallViewer.Name = "WallViewer";
+			this.WallViewer.UseVisualStyleBackColor = true;
+			// 
+			// MinimapPanel
+			// 
+			this.MinimapPanel.Controls.Add(this.groupBox2);
+			this.MinimapPanel.Controls.Add(this.panel1);
+			resources.ApplyResources(this.MinimapPanel, "MinimapPanel");
+			this.MinimapPanel.Name = "MinimapPanel";
+			this.MinimapPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimapPanel_Paint);
+			this.MinimapPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinimapPanel_MouseDown);
+			// 
+			// groupBox2
+			// 
+			resources.ApplyResources(this.groupBox2, "groupBox2");
+			this.groupBox2.Controls.Add(this.chkDevide2);
+			this.groupBox2.Controls.Add(this.chkDevide);
+			this.groupBox2.Controls.Add(this.chkMass);
+			this.groupBox2.Controls.Add(this.button3);
+			this.groupBox2.Controls.Add(this.button2);
+			this.groupBox2.Controls.Add(this.button1);
+			this.groupBox2.Controls.Add(this.buttonCenter);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.TabStop = false;
+			// 
+			// chkDevide2
+			// 
+			resources.ApplyResources(this.chkDevide2, "chkDevide2");
+			this.chkDevide2.Name = "chkDevide2";
+			this.chkDevide2.UseVisualStyleBackColor = true;
+			this.chkDevide2.CheckedChanged += new System.EventHandler(this.chkDevide2_CheckedChanged);
+			// 
+			// chkDevide
+			// 
+			resources.ApplyResources(this.chkDevide, "chkDevide");
+			this.chkDevide.Name = "chkDevide";
+			this.chkDevide.UseVisualStyleBackColor = true;
+			this.chkDevide.CheckedChanged += new System.EventHandler(this.chkDevide_CheckedChanged);
+			// 
+			// chkMass
+			// 
+			resources.ApplyResources(this.chkMass, "chkMass");
+			this.chkMass.Name = "chkMass";
+			this.chkMass.UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			resources.ApplyResources(this.button3, "button3");
+			this.button3.Name = "button3";
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// button2
+			// 
+			resources.ApplyResources(this.button2, "button2");
+			this.button2.Name = "button2";
+			this.button2.UseMnemonic = false;
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// button1
+			// 
+			resources.ApplyResources(this.button1, "button1");
+			this.button1.Name = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// buttonCenter
+			// 
+			resources.ApplyResources(this.buttonCenter, "buttonCenter");
+			this.buttonCenter.Name = "buttonCenter";
+			this.buttonCenter.UseVisualStyleBackColor = true;
+			this.buttonCenter.Click += new System.EventHandler(this.buttonCenter_Click);
+			// 
+			// panel1
+			// 
+			resources.ApplyResources(this.panel1, "panel1");
+			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.panel1.Name = "panel1";
+			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+			this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+			// 
+			// tabPage1
+			// 
+			this.tabPage1.Controls.Add(this.groupBox1);
+			resources.ApplyResources(this.tabPage1, "tabPage1");
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.questGraphic);
+			this.groupBox1.Controls.Add(this.questTitle);
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.label1);
+			this.groupBox1.Controls.Add(this.mapType);
+			this.groupBox1.Controls.Add(this.mapTypeLbl);
+			this.groupBox1.Controls.Add(this.recommendedLbl);
+			this.groupBox1.Controls.Add(this.maxRecLbl);
+			this.groupBox1.Controls.Add(this.minRecLbl);
+			this.groupBox1.Controls.Add(this.mapMaxRec);
+			this.groupBox1.Controls.Add(this.mapMinRec);
+			this.groupBox1.Controls.Add(this.mapCopyright);
+			this.groupBox1.Controls.Add(this.labelCopyright);
+			this.groupBox1.Controls.Add(this.mapVersion);
+			this.groupBox1.Controls.Add(this.mapDate);
+			this.groupBox1.Controls.Add(this.labelDate);
+			this.groupBox1.Controls.Add(this.mapAuthor2);
+			this.groupBox1.Controls.Add(this.mapEmail2);
+			this.groupBox1.Controls.Add(this.mapEmail);
+			this.groupBox1.Controls.Add(this.mapAuthor);
+			this.groupBox1.Controls.Add(this.labelEmail2);
+			this.groupBox1.Controls.Add(this.labelEmail);
+			this.groupBox1.Controls.Add(this.labelAuthor2);
+			this.groupBox1.Controls.Add(this.labelAuthor);
+			this.groupBox1.Controls.Add(this.labelVersion);
+			this.groupBox1.Controls.Add(this.mapDescription);
+			this.groupBox1.Controls.Add(this.labelDescription);
+			this.groupBox1.Controls.Add(this.labelTitle);
+			this.groupBox1.Controls.Add(this.mapSummary);
+			resources.ApplyResources(this.groupBox1, "groupBox1");
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.TabStop = false;
+			// 
+			// label3
+			// 
+			resources.ApplyResources(this.label3, "label3");
+			this.label3.Name = "label3";
+			// 
+			// questGraphic
+			// 
+			resources.ApplyResources(this.questGraphic, "questGraphic");
+			this.questGraphic.Name = "questGraphic";
+			// 
+			// questTitle
+			// 
+			resources.ApplyResources(this.questTitle, "questTitle");
+			this.questTitle.Name = "questTitle";
+			// 
+			// label2
+			// 
+			resources.ApplyResources(this.label2, "label2");
+			this.label2.Name = "label2";
+			// 
+			// label1
+			// 
+			resources.ApplyResources(this.label1, "label1");
+			this.label1.Name = "label1";
+			// 
+			// mapType
+			// 
+			this.mapType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.mapType.FormattingEnabled = true;
+			resources.ApplyResources(this.mapType, "mapType");
+			this.mapType.Name = "mapType";
+			// 
+			// mapTypeLbl
+			// 
+			resources.ApplyResources(this.mapTypeLbl, "mapTypeLbl");
+			this.mapTypeLbl.Name = "mapTypeLbl";
+			// 
+			// recommendedLbl
+			// 
+			resources.ApplyResources(this.recommendedLbl, "recommendedLbl");
+			this.recommendedLbl.Name = "recommendedLbl";
+			// 
+			// maxRecLbl
+			// 
+			resources.ApplyResources(this.maxRecLbl, "maxRecLbl");
+			this.maxRecLbl.Name = "maxRecLbl";
+			// 
+			// minRecLbl
+			// 
+			resources.ApplyResources(this.minRecLbl, "minRecLbl");
+			this.minRecLbl.Name = "minRecLbl";
+			// 
+			// mapMaxRec
+			// 
+			resources.ApplyResources(this.mapMaxRec, "mapMaxRec");
+			this.mapMaxRec.Name = "mapMaxRec";
+			// 
+			// mapMinRec
+			// 
+			resources.ApplyResources(this.mapMinRec, "mapMinRec");
+			this.mapMinRec.Name = "mapMinRec";
+			// 
+			// mapCopyright
+			// 
+			resources.ApplyResources(this.mapCopyright, "mapCopyright");
+			this.mapCopyright.Name = "mapCopyright";
+			// 
+			// labelCopyright
+			// 
+			resources.ApplyResources(this.labelCopyright, "labelCopyright");
+			this.labelCopyright.Name = "labelCopyright";
+			// 
+			// mapVersion
+			// 
+			resources.ApplyResources(this.mapVersion, "mapVersion");
+			this.mapVersion.Name = "mapVersion";
+			// 
+			// mapDate
+			// 
+			resources.ApplyResources(this.mapDate, "mapDate");
+			this.mapDate.Name = "mapDate";
+			// 
+			// labelDate
+			// 
+			resources.ApplyResources(this.labelDate, "labelDate");
+			this.labelDate.Name = "labelDate";
+			// 
+			// mapAuthor2
+			// 
+			resources.ApplyResources(this.mapAuthor2, "mapAuthor2");
+			this.mapAuthor2.Name = "mapAuthor2";
+			// 
+			// mapEmail2
+			// 
+			resources.ApplyResources(this.mapEmail2, "mapEmail2");
+			this.mapEmail2.Name = "mapEmail2";
+			// 
+			// mapEmail
+			// 
+			resources.ApplyResources(this.mapEmail, "mapEmail");
+			this.mapEmail.Name = "mapEmail";
+			// 
+			// mapAuthor
+			// 
+			resources.ApplyResources(this.mapAuthor, "mapAuthor");
+			this.mapAuthor.Name = "mapAuthor";
+			// 
+			// labelEmail2
+			// 
+			resources.ApplyResources(this.labelEmail2, "labelEmail2");
+			this.labelEmail2.Name = "labelEmail2";
+			// 
+			// labelEmail
+			// 
+			resources.ApplyResources(this.labelEmail, "labelEmail");
+			this.labelEmail.Name = "labelEmail";
+			// 
+			// labelAuthor2
+			// 
+			resources.ApplyResources(this.labelAuthor2, "labelAuthor2");
+			this.labelAuthor2.Name = "labelAuthor2";
+			// 
+			// labelAuthor
+			// 
+			resources.ApplyResources(this.labelAuthor, "labelAuthor");
+			this.labelAuthor.Name = "labelAuthor";
+			// 
+			// labelVersion
+			// 
+			resources.ApplyResources(this.labelVersion, "labelVersion");
+			this.labelVersion.Name = "labelVersion";
+			// 
+			// mapDescription
+			// 
+			resources.ApplyResources(this.mapDescription, "mapDescription");
+			this.mapDescription.Name = "mapDescription";
+			// 
+			// labelDescription
+			// 
+			resources.ApplyResources(this.labelDescription, "labelDescription");
+			this.labelDescription.Name = "labelDescription";
+			// 
+			// labelTitle
+			// 
+			resources.ApplyResources(this.labelTitle, "labelTitle");
+			this.labelTitle.Name = "labelTitle";
+			// 
+			// mapSummary
+			// 
+			resources.ApplyResources(this.mapSummary, "mapSummary");
+			this.mapSummary.Name = "mapSummary";
+			// 
+			// tabGUI
+			// 
+			this.tabGUI.Controls.Add(this.ToolPanel);
+			this.tabGUI.Controls.Add(this.GuiPanel);
+			resources.ApplyResources(this.tabGUI, "tabGUI");
+			this.tabGUI.Name = "tabGUI";
+			this.tabGUI.UseVisualStyleBackColor = true;
+			this.tabGUI.Enter += new System.EventHandler(this.tabGUI_Enter);
+			this.tabGUI.Leave += new System.EventHandler(this.tabGUI_Leave);
+			this.tabGUI.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabGUI_MouseDown);
+			this.tabGUI.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabGUI_MouseMove);
+			this.tabGUI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tabGUI_MouseUp);
+			this.tabGUI.Resize += new System.EventHandler(this.tabGUI_Resize);
+			// 
+			// ToolPanel
+			// 
+			this.ToolPanel.Controls.Add(this.chkShowNPC);
+			resources.ApplyResources(this.ToolPanel, "ToolPanel");
+			this.ToolPanel.Name = "ToolPanel";
+			// 
+			// chkShowNPC
+			// 
+			resources.ApplyResources(this.chkShowNPC, "chkShowNPC");
+			this.chkShowNPC.Name = "chkShowNPC";
+			this.chkShowNPC.UseVisualStyleBackColor = true;
+			this.chkShowNPC.CheckedChanged += new System.EventHandler(this.chkShowNPC_CheckedChanged);
+			// 
+			// GuiPanel
+			// 
+			resources.ApplyResources(this.GuiPanel, "GuiPanel");
+			this.GuiPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.GuiPanel.Name = "GuiPanel";
+			this.GuiPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.GuiPanel_Paint);
+			this.GuiPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GuiPanel_MouseDown);
+			this.GuiPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GuiPanel_MouseMove);
+			this.GuiPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GuiPanel_MouseUp);
+			this.GuiPanel.Resize += new System.EventHandler(this.GuiPanel_Resize);
+			// 
+			// mainMenu1
+			// 
+			this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuFile,
+									this.menuMap,
+									this.menuOptions,
+									this.menuHelp,
+									this.templateMenu,
+									this.menuItem1});
+			// 
+			// templateMenu
+			// 
+			this.templateMenu.Index = 4;
+			this.templateMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItem20,
+									this.menuItem17});
+			resources.ApplyResources(this.templateMenu, "templateMenu");
+			// 
+			// menuItem20
+			// 
+			this.menuItem20.Index = 0;
+			resources.ApplyResources(this.menuItem20, "menuItem20");
+			this.menuItem20.Click += new System.EventHandler(this.menuItem20_Click);
+			// 
+			// menuItem17
+			// 
+			this.menuItem17.Index = 1;
+			resources.ApplyResources(this.menuItem17, "menuItem17");
+			this.menuItem17.Click += new System.EventHandler(this.menuItem17_Click_1);
+			// 
+			// menuItem1
+			// 
+			this.menuItem1.Index = 5;
+			this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItem2,
+									this.menuItem19});
+			resources.ApplyResources(this.menuItem1, "menuItem1");
+			// 
+			// menuItem2
+			// 
+			this.menuItem2.Index = 0;
+			this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItem3,
+									this.menuItem8});
+			resources.ApplyResources(this.menuItem2, "menuItem2");
+			// 
+			// menuItem3
+			// 
+			this.menuItem3.Index = 0;
+			this.menuItem3.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItem4,
+									this.menuItem5,
+									this.menuItem6,
+									this.menuItem7});
+			resources.ApplyResources(this.menuItem3, "menuItem3");
+			// 
+			// menuItem4
+			// 
+			this.menuItem4.Index = 0;
+			resources.ApplyResources(this.menuItem4, "menuItem4");
+			this.menuItem4.Click += new System.EventHandler(this.menuItem4_Click);
+			// 
+			// menuItem5
+			// 
+			this.menuItem5.Index = 1;
+			resources.ApplyResources(this.menuItem5, "menuItem5");
+			this.menuItem5.Click += new System.EventHandler(this.menuItem5_Click);
+			// 
+			// menuItem6
+			// 
+			this.menuItem6.Index = 2;
+			resources.ApplyResources(this.menuItem6, "menuItem6");
+			this.menuItem6.Click += new System.EventHandler(this.menuItem6_Click);
+			// 
+			// menuItem7
+			// 
+			this.menuItem7.Index = 3;
+			resources.ApplyResources(this.menuItem7, "menuItem7");
+			this.menuItem7.Click += new System.EventHandler(this.menuItem7_Click);
+			// 
+			// menuItem8
+			// 
+			this.menuItem8.Index = 1;
+			this.menuItem8.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+									this.menuItem9,
+									this.menuItem10,
+									this.menuItem11});
+			resources.ApplyResources(this.menuItem8, "menuItem8");
+			// 
+			// menuItem9
+			// 
+			this.menuItem9.Index = 0;
+			resources.ApplyResources(this.menuItem9, "menuItem9");
+			this.menuItem9.Click += new System.EventHandler(this.menuItem9_Click);
+			// 
+			// menuItem10
+			// 
+			this.menuItem10.Checked = true;
+			this.menuItem10.Index = 1;
+			resources.ApplyResources(this.menuItem10, "menuItem10");
+			this.menuItem10.Click += new System.EventHandler(this.menuItem10_Click);
+			// 
+			// menuItem11
+			// 
+			this.menuItem11.Index = 2;
+			resources.ApplyResources(this.menuItem11, "menuItem11");
+			this.menuItem11.Click += new System.EventHandler(this.menuItem11_Click);
+			// 
+			// menuItem19
+			// 
+			this.menuItem19.Index = 1;
+			resources.ApplyResources(this.menuItem19, "menuItem19");
+			this.menuItem19.Click += new System.EventHandler(this.menuItem19_Click);
+			// 
+			// MainWindow
+			// 
+			resources.ApplyResources(this, "$this");
+			this.Controls.Add(this.tabControl1);
+			this.DoubleBuffered = true;
+			this.Menu = this.mainMenu1;
+			this.Name = "MainWindow";
+			this.Load += new System.EventHandler(this.MainWindow_Load);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyUp);
+			this.Move += new System.EventHandler(this.MainWindow_Move);
+			this.tabControl1.ResumeLayout(false);
+			this.largeMap.ResumeLayout(false);
+			this.WallViewer.ResumeLayout(false);
+			this.MinimapPanel.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
+			this.tabPage1.ResumeLayout(false);
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			this.tabGUI.ResumeLayout(false);
+			this.ToolPanel.ResumeLayout(false);
+			this.ToolPanel.PerformLayout();
+			this.ResumeLayout(false);
         }
 		#endregion
 
@@ -1410,29 +1402,14 @@ namespace NoxMapEditor
 			template.Show();
 		}
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (tabControl1.SelectedTab == tabGUI)
-            {
-                GuiPanel.Invalidate();
-                //unsafe
-                //{
-                    //IntPtr pt = (IntPtr)myMap.GetSurface();
-                    //mapView.DrawWallsToSurface(pt);
-                    //myMap.ReleaseSurface((int*)pt);
-                //}
-                    //mapView.
-            }
-        }
         private void tabGUI_Enter(object sender, EventArgs e)
         {
             myMap.SetLoc(mapView.winX, mapView.winY);
             GuiPanel.Invalidate();
-            timer1.Enabled = true;
         }
         private void tabGUI_Leave(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
+        	
         }
         private void MainWindow_Move(object sender, EventArgs e)
         {
