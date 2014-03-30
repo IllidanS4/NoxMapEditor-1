@@ -257,744 +257,740 @@ Setstyle(Controlstyles.OptimizedDoubleBuffer, true); */
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapView));
-            this.contextMenuDelete = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.contextMenuProperties = new System.Windows.Forms.MenuItem();
-            this.contextMenuExportDefault = new System.Windows.Forms.MenuItem();
-            this.contextMenuExportBinary = new System.Windows.Forms.MenuItem();
-            this.statusBar = new System.Windows.Forms.StatusBar();
-            this.statusLocation = new System.Windows.Forms.StatusBarPanel();
-            this.statusWall = new System.Windows.Forms.StatusBarPanel();
-            this.statusTile = new System.Windows.Forms.StatusBarPanel();
-            this.statusObject = new System.Windows.Forms.StatusBarPanel();
-            this.groupAdv = new System.Windows.Forms.GroupBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.chkAltGrid = new System.Windows.Forms.CheckBox();
-            this.tabMapTools = new System.Windows.Forms.TabControl();
-            this.tabWalls = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.wallGroup = new System.Windows.Forms.GroupBox();
-            this.secretFlagsBoxes = new System.Windows.Forms.CheckedListBox();
-            this.wallSelector = new NoxMapEditor.WallSelector();
-            this.buttonSecret = new System.Windows.Forms.Button();
-            this.destructableButton = new System.Windows.Forms.Button();
-            this.windowsButton = new System.Windows.Forms.Button();
-            this.tabTiles = new System.Windows.Forms.TabPage();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkIgnoreOn = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboEdgeIgnoreBox = new System.Windows.Forms.ComboBox();
-            this.cboAutoEdge = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.floorGroup = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.threeFloorBox = new System.Windows.Forms.CheckBox();
-            this.chkAutoEdge = new System.Windows.Forms.CheckBox();
-            this.buttonBlend = new System.Windows.Forms.Button();
-            this.tileVar = new System.Windows.Forms.ComboBox();
-            this.tileGraphic = new System.Windows.Forms.ComboBox();
-            this.floorButton = new System.Windows.Forms.Button();
-            this.tabObjects = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radFullSnap = new System.Windows.Forms.RadioButton();
-            this.radCenterSnap = new System.Windows.Forms.RadioButton();
-            this.radNoSnap = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.objectGroup = new System.Windows.Forms.GroupBox();
-            this.cboObjCreate = new System.Windows.Forms.ComboBox();
-            this.selectButton = new System.Windows.Forms.Button();
-            this.newObjectButton = new System.Windows.Forms.Button();
-            this.tabPoly = new System.Windows.Forms.TabPage();
-            this.wpGroup = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.buttonSelWay = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtWpDefault = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.editWpButton = new System.Windows.Forms.Button();
-            this.wpNameBox = new System.Windows.Forms.TextBox();
-            this.wpAddButton = new System.Windows.Forms.Button();
-            this.groupPolygons = new System.Windows.Forms.GroupBox();
-            this.buttonPolygonDelete = new System.Windows.Forms.Button();
-            this.buttonPolygonNew = new System.Windows.Forms.Button();
-            this.buttonEditPolygon = new System.Windows.Forms.Button();
-            this.buttonPoints = new System.Windows.Forms.Button();
-            this.listPolygons = new System.Windows.Forms.ComboBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.chkShowObj = new System.Windows.Forms.CheckBox();
-            this.chkGrid = new System.Windows.Forms.CheckBox();
-            this.chkTileGrid = new System.Windows.Forms.CheckBox();
-            this.scrollPanel = new System.Windows.Forms.Panel();
-            this.mapPanel = new NoxMapEditor.MapView.FlickerFreePanel();
-            this.contextMenu = new System.Windows.Forms.ContextMenu();
-            this.contextMenuCopy = new System.Windows.Forms.MenuItem();
-            this.contextMenuPaste = new System.Windows.Forms.MenuItem();
-            this.tmrInvalidate = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.statusLocation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusWall)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusTile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusObject)).BeginInit();
-            this.groupAdv.SuspendLayout();
-            this.tabMapTools.SuspendLayout();
-            this.tabWalls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.wallGroup.SuspendLayout();
-            this.tabTiles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.floorGroup.SuspendLayout();
-            this.tabObjects.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.objectGroup.SuspendLayout();
-            this.tabPoly.SuspendLayout();
-            this.wpGroup.SuspendLayout();
-            this.groupPolygons.SuspendLayout();
-            this.scrollPanel.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // contextMenuDelete
-            // 
-            this.contextMenuDelete.Index = 2;
-            resources.ApplyResources(this.contextMenuDelete, "contextMenuDelete");
-            this.contextMenuDelete.Click += new System.EventHandler(this.contextMenuDelete_Click);
-            // 
-            // menuItem3
-            // 
-            this.menuItem3.Index = 3;
-            resources.ApplyResources(this.menuItem3, "menuItem3");
-            // 
-            // contextMenuProperties
-            // 
-            this.contextMenuProperties.Index = 4;
-            resources.ApplyResources(this.contextMenuProperties, "contextMenuProperties");
-            this.contextMenuProperties.Click += new System.EventHandler(this.contextMenuProperties_Click);
-            // 
-            // contextMenuExportDefault
-            // 
-            this.contextMenuExportDefault.Index = 5;
-            resources.ApplyResources(this.contextMenuExportDefault, "contextMenuExportDefault");
-            this.contextMenuExportDefault.Click += new System.EventHandler(this.contextMenuExportDefault_Click);
-            // 
-            // contextMenuExportBinary
-            // 
-            this.contextMenuExportBinary.Index = 6;
-            resources.ApplyResources(this.contextMenuExportBinary, "contextMenuExportBinary");
-            this.contextMenuExportBinary.Click += new System.EventHandler(this.contextMenuExportBinary_Click);
-            // 
-            // statusBar
-            // 
-            resources.ApplyResources(this.statusBar, "statusBar");
-            this.statusBar.Name = "statusBar";
-            this.statusBar.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
-            this.statusLocation,
-            this.statusWall,
-            this.statusTile,
-            this.statusObject});
-            this.statusBar.ShowPanels = true;
-            this.statusBar.SizingGrip = false;
-            // 
-            // statusLocation
-            // 
-            resources.ApplyResources(this.statusLocation, "statusLocation");
-            // 
-            // statusWall
-            // 
-            this.statusWall.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents;
-            resources.ApplyResources(this.statusWall, "statusWall");
-            // 
-            // statusTile
-            // 
-            this.statusTile.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents;
-            resources.ApplyResources(this.statusTile, "statusTile");
-            // 
-            // statusObject
-            // 
-            this.statusObject.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents;
-            resources.ApplyResources(this.statusObject, "statusObject");
-            // 
-            // groupAdv
-            // 
-            resources.ApplyResources(this.groupAdv, "groupAdv");
-            this.groupAdv.Controls.Add(this.checkBox6);
-            this.groupAdv.Controls.Add(this.checkBox5);
-            this.groupAdv.Controls.Add(this.checkBox4);
-            this.groupAdv.Controls.Add(this.chkAltGrid);
-            this.groupAdv.Controls.Add(this.tabMapTools);
-            this.groupAdv.Controls.Add(this.checkBox2);
-            this.groupAdv.Controls.Add(this.chkShowObj);
-            this.groupAdv.Controls.Add(this.chkGrid);
-            this.groupAdv.Controls.Add(this.chkTileGrid);
-            this.groupAdv.Name = "groupAdv";
-            this.groupAdv.TabStop = false;
-            // 
-            // checkBox6
-            // 
-            resources.ApplyResources(this.checkBox6, "checkBox6");
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
-            // 
-            // checkBox5
-            // 
-            resources.ApplyResources(this.checkBox5, "checkBox5");
-            this.checkBox5.Checked = true;
-            this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
-            // 
-            // checkBox4
-            // 
-            resources.ApplyResources(this.checkBox4, "checkBox4");
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
-            // 
-            // chkAltGrid
-            // 
-            resources.ApplyResources(this.chkAltGrid, "chkAltGrid");
-            this.chkAltGrid.Name = "chkAltGrid";
-            this.chkAltGrid.UseVisualStyleBackColor = true;
-            // 
-            // tabMapTools
-            // 
-            this.tabMapTools.Controls.Add(this.tabWalls);
-            this.tabMapTools.Controls.Add(this.tabTiles);
-            this.tabMapTools.Controls.Add(this.tabObjects);
-            this.tabMapTools.Controls.Add(this.tabPoly);
-            resources.ApplyResources(this.tabMapTools, "tabMapTools");
-            this.tabMapTools.Name = "tabMapTools";
-            this.tabMapTools.SelectedIndex = 0;
-            // 
-            // tabWalls
-            // 
-            this.tabWalls.BackColor = System.Drawing.Color.Silver;
-            this.tabWalls.Controls.Add(this.pictureBox2);
-            this.tabWalls.Controls.Add(this.wallGroup);
-            resources.ApplyResources(this.tabWalls, "tabWalls");
-            this.tabWalls.Name = "tabWalls";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
-            // wallGroup
-            // 
-            this.wallGroup.Controls.Add(this.secretFlagsBoxes);
-            this.wallGroup.Controls.Add(this.wallSelector);
-            this.wallGroup.Controls.Add(this.buttonSecret);
-            this.wallGroup.Controls.Add(this.destructableButton);
-            this.wallGroup.Controls.Add(this.windowsButton);
-            resources.ApplyResources(this.wallGroup, "wallGroup");
-            this.wallGroup.Name = "wallGroup";
-            this.wallGroup.TabStop = false;
-            // 
-            // secretFlagsBoxes
-            // 
-            this.secretFlagsBoxes.FormattingEnabled = true;
-            resources.ApplyResources(this.secretFlagsBoxes, "secretFlagsBoxes");
-            this.secretFlagsBoxes.Name = "secretFlagsBoxes";
-            // 
-            // wallSelector
-            // 
-            resources.ApplyResources(this.wallSelector, "wallSelector");
-            this.wallSelector.Name = "wallSelector";
-            this.wallSelector.Load += new System.EventHandler(this.wallSelector_Load);
-            // 
-            // buttonSecret
-            // 
-            resources.ApplyResources(this.buttonSecret, "buttonSecret");
-            this.buttonSecret.Name = "buttonSecret";
-            this.buttonSecret.Click += new System.EventHandler(this.buttonSecret_Click);
-            // 
-            // destructableButton
-            // 
-            resources.ApplyResources(this.destructableButton, "destructableButton");
-            this.destructableButton.Name = "destructableButton";
-            this.destructableButton.Click += new System.EventHandler(this.destructableButton_Click);
-            // 
-            // windowsButton
-            // 
-            resources.ApplyResources(this.windowsButton, "windowsButton");
-            this.windowsButton.Name = "windowsButton";
-            this.windowsButton.Click += new System.EventHandler(this.windowsButton_Click);
-            // 
-            // tabTiles
-            // 
-            this.tabTiles.BackColor = System.Drawing.Color.Silver;
-            this.tabTiles.Controls.Add(this.pictureBox3);
-            this.tabTiles.Controls.Add(this.groupBox2);
-            this.tabTiles.Controls.Add(this.floorGroup);
-            resources.ApplyResources(this.tabTiles, "tabTiles");
-            this.tabTiles.Name = "tabTiles";
-            this.tabTiles.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Black;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.chkIgnoreOn);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.cboEdgeIgnoreBox);
-            this.groupBox2.Controls.Add(this.cboAutoEdge);
-            this.groupBox2.Controls.Add(this.button1);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
-            // chkIgnoreOn
-            // 
-            resources.ApplyResources(this.chkIgnoreOn, "chkIgnoreOn");
-            this.chkIgnoreOn.Name = "chkIgnoreOn";
-            this.chkIgnoreOn.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // cboEdgeIgnoreBox
-            // 
-            this.cboEdgeIgnoreBox.FormattingEnabled = true;
-            resources.ApplyResources(this.cboEdgeIgnoreBox, "cboEdgeIgnoreBox");
-            this.cboEdgeIgnoreBox.Name = "cboEdgeIgnoreBox";
-            this.cboEdgeIgnoreBox.Sorted = true;
-            // 
-            // cboAutoEdge
-            // 
-            this.cboAutoEdge.FormattingEnabled = true;
-            resources.ApplyResources(this.cboAutoEdge, "cboAutoEdge");
-            this.cboAutoEdge.Name = "cboAutoEdge";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // floorGroup
-            // 
-            this.floorGroup.BackColor = System.Drawing.Color.Silver;
-            this.floorGroup.Controls.Add(this.checkBox1);
-            this.floorGroup.Controls.Add(this.threeFloorBox);
-            this.floorGroup.Controls.Add(this.chkAutoEdge);
-            this.floorGroup.Controls.Add(this.buttonBlend);
-            this.floorGroup.Controls.Add(this.tileVar);
-            this.floorGroup.Controls.Add(this.tileGraphic);
-            this.floorGroup.Controls.Add(this.floorButton);
-            resources.ApplyResources(this.floorGroup, "floorGroup");
-            this.floorGroup.Name = "floorGroup";
-            this.floorGroup.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // threeFloorBox
-            // 
-            resources.ApplyResources(this.threeFloorBox, "threeFloorBox");
-            this.threeFloorBox.Name = "threeFloorBox";
-            // 
-            // chkAutoEdge
-            // 
-            resources.ApplyResources(this.chkAutoEdge, "chkAutoEdge");
-            this.chkAutoEdge.Name = "chkAutoEdge";
-            this.chkAutoEdge.UseVisualStyleBackColor = true;
-            // 
-            // buttonBlend
-            // 
-            resources.ApplyResources(this.buttonBlend, "buttonBlend");
-            this.buttonBlend.Name = "buttonBlend";
-            this.buttonBlend.Click += new System.EventHandler(this.buttonBlend_Click);
-            // 
-            // tileVar
-            // 
-            this.tileVar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tileVar.DropDownWidth = 40;
-            this.tileVar.FormattingEnabled = true;
-            resources.ApplyResources(this.tileVar, "tileVar");
-            this.tileVar.Name = "tileVar";
-            // 
-            // tileGraphic
-            // 
-            this.tileGraphic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tileGraphic.DropDownWidth = 180;
-            this.tileGraphic.FormattingEnabled = true;
-            resources.ApplyResources(this.tileGraphic, "tileGraphic");
-            this.tileGraphic.Name = "tileGraphic";
-            this.tileGraphic.Sorted = true;
-            this.tileGraphic.SelectedIndexChanged += new System.EventHandler(this.tileGraphic_SelectedIndexChanged);
-            // 
-            // floorButton
-            // 
-            resources.ApplyResources(this.floorButton, "floorButton");
-            this.floorButton.Name = "floorButton";
-            this.floorButton.Click += new System.EventHandler(this.floorButton_Click);
-            // 
-            // tabObjects
-            // 
-            this.tabObjects.BackColor = System.Drawing.Color.Silver;
-            this.tabObjects.Controls.Add(this.groupBox1);
-            this.tabObjects.Controls.Add(this.radFullSnap);
-            this.tabObjects.Controls.Add(this.radCenterSnap);
-            this.tabObjects.Controls.Add(this.radNoSnap);
-            this.tabObjects.Controls.Add(this.pictureBox1);
-            this.tabObjects.Controls.Add(this.objectGroup);
-            resources.ApplyResources(this.tabObjects, "tabObjects");
-            this.tabObjects.Name = "tabObjects";
-            this.tabObjects.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // radioButton3
-            // 
-            resources.ApplyResources(this.radioButton3, "radioButton3");
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.Checked = true;
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            resources.ApplyResources(this.radioButton1, "radioButton1");
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radFullSnap
-            // 
-            resources.ApplyResources(this.radFullSnap, "radFullSnap");
-            this.radFullSnap.Name = "radFullSnap";
-            this.radFullSnap.UseVisualStyleBackColor = true;
-            this.radFullSnap.CheckedChanged += new System.EventHandler(this.radFullSnap_CheckedChanged);
-            // 
-            // radCenterSnap
-            // 
-            resources.ApplyResources(this.radCenterSnap, "radCenterSnap");
-            this.radCenterSnap.Name = "radCenterSnap";
-            this.radCenterSnap.UseVisualStyleBackColor = true;
-            this.radCenterSnap.CheckedChanged += new System.EventHandler(this.radCenterSnap_CheckedChanged);
-            // 
-            // radNoSnap
-            // 
-            resources.ApplyResources(this.radNoSnap, "radNoSnap");
-            this.radNoSnap.Checked = true;
-            this.radNoSnap.Name = "radNoSnap";
-            this.radNoSnap.TabStop = true;
-            this.radNoSnap.UseVisualStyleBackColor = true;
-            this.radNoSnap.CheckedChanged += new System.EventHandler(this.radNoSnap_CheckedChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // objectGroup
-            // 
-            this.objectGroup.Controls.Add(this.cboObjCreate);
-            this.objectGroup.Controls.Add(this.selectButton);
-            this.objectGroup.Controls.Add(this.newObjectButton);
-            resources.ApplyResources(this.objectGroup, "objectGroup");
-            this.objectGroup.Name = "objectGroup";
-            this.objectGroup.TabStop = false;
-            // 
-            // cboObjCreate
-            // 
-            this.cboObjCreate.FormattingEnabled = true;
-            resources.ApplyResources(this.cboObjCreate, "cboObjCreate");
-            this.cboObjCreate.Name = "cboObjCreate";
-            this.cboObjCreate.Sorted = true;
-            this.cboObjCreate.SelectedIndexChanged += new System.EventHandler(this.cboObjCreate_SelectedIndexChanged);
-            // 
-            // selectButton
-            // 
-            resources.ApplyResources(this.selectButton, "selectButton");
-            this.selectButton.Name = "selectButton";
-            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
-            // 
-            // newObjectButton
-            // 
-            resources.ApplyResources(this.newObjectButton, "newObjectButton");
-            this.newObjectButton.Name = "newObjectButton";
-            this.newObjectButton.Click += new System.EventHandler(this.newObjectButton_Click);
-            // 
-            // tabPoly
-            // 
-            this.tabPoly.BackColor = System.Drawing.Color.Silver;
-            this.tabPoly.Controls.Add(this.wpGroup);
-            this.tabPoly.Controls.Add(this.groupPolygons);
-            resources.ApplyResources(this.tabPoly, "tabPoly");
-            this.tabPoly.Name = "tabPoly";
-            // 
-            // wpGroup
-            // 
-            this.wpGroup.Controls.Add(this.checkBox3);
-            this.wpGroup.Controls.Add(this.buttonSelWay);
-            this.wpGroup.Controls.Add(this.label4);
-            this.wpGroup.Controls.Add(this.txtWpDefault);
-            this.wpGroup.Controls.Add(this.label3);
-            this.wpGroup.Controls.Add(this.editWpButton);
-            this.wpGroup.Controls.Add(this.wpNameBox);
-            this.wpGroup.Controls.Add(this.wpAddButton);
-            resources.ApplyResources(this.wpGroup, "wpGroup");
-            this.wpGroup.Name = "wpGroup";
-            this.wpGroup.TabStop = false;
-            // 
-            // checkBox3
-            // 
-            resources.ApplyResources(this.checkBox3, "checkBox3");
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // buttonSelWay
-            // 
-            resources.ApplyResources(this.buttonSelWay, "buttonSelWay");
-            this.buttonSelWay.Name = "buttonSelWay";
-            this.buttonSelWay.UseVisualStyleBackColor = true;
-            this.buttonSelWay.Click += new System.EventHandler(this.buttonSelWay_Click);
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // txtWpDefault
-            // 
-            resources.ApplyResources(this.txtWpDefault, "txtWpDefault");
-            this.txtWpDefault.Name = "txtWpDefault";
-            this.txtWpDefault.TextChanged += new System.EventHandler(this.txtWpDefault_TextChanged);
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            // 
-            // editWpButton
-            // 
-            resources.ApplyResources(this.editWpButton, "editWpButton");
-            this.editWpButton.Name = "editWpButton";
-            this.editWpButton.Click += new System.EventHandler(this.renWpButton_Click);
-            // 
-            // wpNameBox
-            // 
-            resources.ApplyResources(this.wpNameBox, "wpNameBox");
-            this.wpNameBox.Name = "wpNameBox";
-            this.wpNameBox.TextChanged += new System.EventHandler(this.wpNameBox_TextChanged);
-            // 
-            // wpAddButton
-            // 
-            resources.ApplyResources(this.wpAddButton, "wpAddButton");
-            this.wpAddButton.Name = "wpAddButton";
-            this.wpAddButton.Click += new System.EventHandler(this.wpAddButton_Click);
-            // 
-            // groupPolygons
-            // 
-            this.groupPolygons.Controls.Add(this.buttonPolygonDelete);
-            this.groupPolygons.Controls.Add(this.buttonPolygonNew);
-            this.groupPolygons.Controls.Add(this.buttonEditPolygon);
-            this.groupPolygons.Controls.Add(this.buttonPoints);
-            this.groupPolygons.Controls.Add(this.listPolygons);
-            resources.ApplyResources(this.groupPolygons, "groupPolygons");
-            this.groupPolygons.Name = "groupPolygons";
-            this.groupPolygons.TabStop = false;
-            // 
-            // buttonPolygonDelete
-            // 
-            resources.ApplyResources(this.buttonPolygonDelete, "buttonPolygonDelete");
-            this.buttonPolygonDelete.Name = "buttonPolygonDelete";
-            this.buttonPolygonDelete.Click += new System.EventHandler(this.buttonPolygonDelete_Click);
-            // 
-            // buttonPolygonNew
-            // 
-            resources.ApplyResources(this.buttonPolygonNew, "buttonPolygonNew");
-            this.buttonPolygonNew.Name = "buttonPolygonNew";
-            this.buttonPolygonNew.Click += new System.EventHandler(this.buttonPolygonNew_Click);
-            // 
-            // buttonEditPolygon
-            // 
-            resources.ApplyResources(this.buttonEditPolygon, "buttonEditPolygon");
-            this.buttonEditPolygon.Name = "buttonEditPolygon";
-            this.buttonEditPolygon.Click += new System.EventHandler(this.buttonEditPolygon_Click);
-            // 
-            // buttonPoints
-            // 
-            resources.ApplyResources(this.buttonPoints, "buttonPoints");
-            this.buttonPoints.Name = "buttonPoints";
-            this.buttonPoints.Click += new System.EventHandler(this.buttonPoints_Click);
-            // 
-            // listPolygons
-            // 
-            this.listPolygons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listPolygons.DropDownWidth = 120;
-            this.listPolygons.FormattingEnabled = true;
-            resources.ApplyResources(this.listPolygons, "listPolygons");
-            this.listPolygons.Name = "listPolygons";
-            this.listPolygons.Click += new System.EventHandler(this.listPolygons_Click);
-            // 
-            // checkBox2
-            // 
-            resources.ApplyResources(this.checkBox2, "checkBox2");
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // chkShowObj
-            // 
-            resources.ApplyResources(this.chkShowObj, "chkShowObj");
-            this.chkShowObj.Checked = true;
-            this.chkShowObj.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkShowObj.Name = "chkShowObj";
-            this.chkShowObj.UseVisualStyleBackColor = true;
-            // 
-            // chkGrid
-            // 
-            resources.ApplyResources(this.chkGrid, "chkGrid");
-            this.chkGrid.Name = "chkGrid";
-            this.chkGrid.UseVisualStyleBackColor = true;
-            // 
-            // chkTileGrid
-            // 
-            resources.ApplyResources(this.chkTileGrid, "chkTileGrid");
-            this.chkTileGrid.Name = "chkTileGrid";
-            this.chkTileGrid.UseVisualStyleBackColor = true;
-            this.chkTileGrid.CheckedChanged += new System.EventHandler(this.chkTileGrid_CheckedChanged);
-            // 
-            // scrollPanel
-            // 
-            resources.ApplyResources(this.scrollPanel, "scrollPanel");
-            this.scrollPanel.Controls.Add(this.mapPanel);
-            this.scrollPanel.Name = "scrollPanel";
-            this.scrollPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollPanel_Scroll);
-            // 
-            // mapPanel
-            // 
-            resources.ApplyResources(this.mapPanel, "mapPanel");
-            this.mapPanel.Name = "mapPanel";
-            this.mapPanel.MouseLeave += new System.EventHandler(this.mapPanel_MouseLeave);
-            this.mapPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mapPanel_Paint);
-            this.mapPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mapPanel_MouseMove);
-            this.mapPanel.Leave += new System.EventHandler(this.mapPanel_Leave);
-            this.mapPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mapPanel_MouseDown);
-            this.mapPanel.Resize += new System.EventHandler(this.mapPanel_Resize);
-            this.mapPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mapPanel_MouseUp);
-            // 
-            // contextMenu
-            // 
-            this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.contextMenuCopy,
-            this.contextMenuPaste,
-            this.contextMenuDelete,
-            this.menuItem3,
-            this.contextMenuProperties,
-            this.contextMenuExportDefault,
-            this.contextMenuExportBinary});
-            // 
-            // contextMenuCopy
-            // 
-            this.contextMenuCopy.Index = 0;
-            resources.ApplyResources(this.contextMenuCopy, "contextMenuCopy");
-            this.contextMenuCopy.Click += new System.EventHandler(this.contextMenuCopy_Click);
-            // 
-            // contextMenuPaste
-            // 
-            this.contextMenuPaste.Index = 1;
-            resources.ApplyResources(this.contextMenuPaste, "contextMenuPaste");
-            this.contextMenuPaste.Click += new System.EventHandler(this.contextMenuPaste_Click);
-            // 
-            // tmrInvalidate
-            // 
-            this.tmrInvalidate.Enabled = true;
-            this.tmrInvalidate.Tick += new System.EventHandler(this.tmrInvalidate_Tick);
-            // 
-            // MapView
-            // 
-            this.Controls.Add(this.groupAdv);
-            this.Controls.Add(this.scrollPanel);
-            this.Controls.Add(this.statusBar);
-            this.Name = "MapView";
-            resources.ApplyResources(this, "$this");
-            ((System.ComponentModel.ISupportInitialize)(this.statusLocation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusWall)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusTile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusObject)).EndInit();
-            this.groupAdv.ResumeLayout(false);
-            this.groupAdv.PerformLayout();
-            this.tabMapTools.ResumeLayout(false);
-            this.tabWalls.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.wallGroup.ResumeLayout(false);
-            this.tabTiles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.floorGroup.ResumeLayout(false);
-            this.floorGroup.PerformLayout();
-            this.tabObjects.ResumeLayout(false);
-            this.tabObjects.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.objectGroup.ResumeLayout(false);
-            this.tabPoly.ResumeLayout(false);
-            this.wpGroup.ResumeLayout(false);
-            this.wpGroup.PerformLayout();
-            this.groupPolygons.ResumeLayout(false);
-            this.scrollPanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+        	this.components = new System.ComponentModel.Container();
+        	System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapView));
+        	this.contextMenuDelete = new System.Windows.Forms.MenuItem();
+        	this.menuItem3 = new System.Windows.Forms.MenuItem();
+        	this.contextMenuProperties = new System.Windows.Forms.MenuItem();
+        	this.contextMenuExportDefault = new System.Windows.Forms.MenuItem();
+        	this.contextMenuExportBinary = new System.Windows.Forms.MenuItem();
+        	this.statusBar = new System.Windows.Forms.StatusBar();
+        	this.statusLocation = new System.Windows.Forms.StatusBarPanel();
+        	this.statusWall = new System.Windows.Forms.StatusBarPanel();
+        	this.statusTile = new System.Windows.Forms.StatusBarPanel();
+        	this.statusObject = new System.Windows.Forms.StatusBarPanel();
+        	this.groupAdv = new System.Windows.Forms.GroupBox();
+        	this.checkBox6 = new System.Windows.Forms.CheckBox();
+        	this.checkBox5 = new System.Windows.Forms.CheckBox();
+        	this.checkBox4 = new System.Windows.Forms.CheckBox();
+        	this.chkAltGrid = new System.Windows.Forms.CheckBox();
+        	this.tabMapTools = new System.Windows.Forms.TabControl();
+        	this.tabWalls = new System.Windows.Forms.TabPage();
+        	this.pictureBox2 = new System.Windows.Forms.PictureBox();
+        	this.wallGroup = new System.Windows.Forms.GroupBox();
+        	this.secretFlagsBoxes = new System.Windows.Forms.CheckedListBox();
+        	this.wallSelector = new NoxMapEditor.WallSelector();
+        	this.buttonSecret = new System.Windows.Forms.Button();
+        	this.destructableButton = new System.Windows.Forms.Button();
+        	this.windowsButton = new System.Windows.Forms.Button();
+        	this.tabTiles = new System.Windows.Forms.TabPage();
+        	this.pictureBox3 = new System.Windows.Forms.PictureBox();
+        	this.groupBox2 = new System.Windows.Forms.GroupBox();
+        	this.chkIgnoreOn = new System.Windows.Forms.CheckBox();
+        	this.label2 = new System.Windows.Forms.Label();
+        	this.label1 = new System.Windows.Forms.Label();
+        	this.cboEdgeIgnoreBox = new System.Windows.Forms.ComboBox();
+        	this.cboAutoEdge = new System.Windows.Forms.ComboBox();
+        	this.button1 = new System.Windows.Forms.Button();
+        	this.floorGroup = new System.Windows.Forms.GroupBox();
+        	this.checkBox1 = new System.Windows.Forms.CheckBox();
+        	this.threeFloorBox = new System.Windows.Forms.CheckBox();
+        	this.chkAutoEdge = new System.Windows.Forms.CheckBox();
+        	this.buttonBlend = new System.Windows.Forms.Button();
+        	this.tileVar = new System.Windows.Forms.ComboBox();
+        	this.tileGraphic = new System.Windows.Forms.ComboBox();
+        	this.floorButton = new System.Windows.Forms.Button();
+        	this.tabObjects = new System.Windows.Forms.TabPage();
+        	this.groupBox1 = new System.Windows.Forms.GroupBox();
+        	this.radioButton3 = new System.Windows.Forms.RadioButton();
+        	this.radioButton2 = new System.Windows.Forms.RadioButton();
+        	this.radioButton1 = new System.Windows.Forms.RadioButton();
+        	this.radFullSnap = new System.Windows.Forms.RadioButton();
+        	this.radCenterSnap = new System.Windows.Forms.RadioButton();
+        	this.radNoSnap = new System.Windows.Forms.RadioButton();
+        	this.pictureBox1 = new System.Windows.Forms.PictureBox();
+        	this.objectGroup = new System.Windows.Forms.GroupBox();
+        	this.cboObjCreate = new System.Windows.Forms.ComboBox();
+        	this.selectButton = new System.Windows.Forms.Button();
+        	this.newObjectButton = new System.Windows.Forms.Button();
+        	this.tabPoly = new System.Windows.Forms.TabPage();
+        	this.wpGroup = new System.Windows.Forms.GroupBox();
+        	this.checkBox3 = new System.Windows.Forms.CheckBox();
+        	this.buttonSelWay = new System.Windows.Forms.Button();
+        	this.label4 = new System.Windows.Forms.Label();
+        	this.txtWpDefault = new System.Windows.Forms.TextBox();
+        	this.label3 = new System.Windows.Forms.Label();
+        	this.editWpButton = new System.Windows.Forms.Button();
+        	this.wpNameBox = new System.Windows.Forms.TextBox();
+        	this.wpAddButton = new System.Windows.Forms.Button();
+        	this.groupPolygons = new System.Windows.Forms.GroupBox();
+        	this.buttonPolygonDelete = new System.Windows.Forms.Button();
+        	this.buttonPolygonNew = new System.Windows.Forms.Button();
+        	this.buttonEditPolygon = new System.Windows.Forms.Button();
+        	this.buttonPoints = new System.Windows.Forms.Button();
+        	this.listPolygons = new System.Windows.Forms.ComboBox();
+        	this.checkBox2 = new System.Windows.Forms.CheckBox();
+        	this.chkShowObj = new System.Windows.Forms.CheckBox();
+        	this.chkGrid = new System.Windows.Forms.CheckBox();
+        	this.chkTileGrid = new System.Windows.Forms.CheckBox();
+        	this.scrollPanel = new System.Windows.Forms.Panel();
+        	this.mapPanel = new NoxMapEditor.MapView.FlickerFreePanel();
+        	this.contextMenu = new System.Windows.Forms.ContextMenu();
+        	this.contextMenuCopy = new System.Windows.Forms.MenuItem();
+        	this.contextMenuPaste = new System.Windows.Forms.MenuItem();
+        	this.tmrInvalidate = new System.Windows.Forms.Timer(this.components);
+        	((System.ComponentModel.ISupportInitialize)(this.statusLocation)).BeginInit();
+        	((System.ComponentModel.ISupportInitialize)(this.statusWall)).BeginInit();
+        	((System.ComponentModel.ISupportInitialize)(this.statusTile)).BeginInit();
+        	((System.ComponentModel.ISupportInitialize)(this.statusObject)).BeginInit();
+        	this.groupAdv.SuspendLayout();
+        	this.tabMapTools.SuspendLayout();
+        	this.tabWalls.SuspendLayout();
+        	((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+        	this.wallGroup.SuspendLayout();
+        	this.tabTiles.SuspendLayout();
+        	((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+        	this.groupBox2.SuspendLayout();
+        	this.floorGroup.SuspendLayout();
+        	this.tabObjects.SuspendLayout();
+        	this.groupBox1.SuspendLayout();
+        	((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+        	this.objectGroup.SuspendLayout();
+        	this.tabPoly.SuspendLayout();
+        	this.wpGroup.SuspendLayout();
+        	this.groupPolygons.SuspendLayout();
+        	this.scrollPanel.SuspendLayout();
+        	this.SuspendLayout();
+        	// 
+        	// contextMenuDelete
+        	// 
+        	this.contextMenuDelete.Index = 2;
+        	resources.ApplyResources(this.contextMenuDelete, "contextMenuDelete");
+        	this.contextMenuDelete.Click += new System.EventHandler(this.contextMenuDelete_Click);
+        	// 
+        	// menuItem3
+        	// 
+        	this.menuItem3.Index = 3;
+        	resources.ApplyResources(this.menuItem3, "menuItem3");
+        	// 
+        	// contextMenuProperties
+        	// 
+        	this.contextMenuProperties.Index = 4;
+        	resources.ApplyResources(this.contextMenuProperties, "contextMenuProperties");
+        	this.contextMenuProperties.Click += new System.EventHandler(this.contextMenuProperties_Click);
+        	// 
+        	// contextMenuExportDefault
+        	// 
+        	this.contextMenuExportDefault.Index = 5;
+        	resources.ApplyResources(this.contextMenuExportDefault, "contextMenuExportDefault");
+        	this.contextMenuExportDefault.Click += new System.EventHandler(this.contextMenuExportDefault_Click);
+        	// 
+        	// contextMenuExportBinary
+        	// 
+        	this.contextMenuExportBinary.Index = 6;
+        	resources.ApplyResources(this.contextMenuExportBinary, "contextMenuExportBinary");
+        	this.contextMenuExportBinary.Click += new System.EventHandler(this.contextMenuExportBinary_Click);
+        	// 
+        	// statusBar
+        	// 
+        	resources.ApplyResources(this.statusBar, "statusBar");
+        	this.statusBar.Name = "statusBar";
+        	this.statusBar.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
+        	        	        	this.statusLocation,
+        	        	        	this.statusWall,
+        	        	        	this.statusTile,
+        	        	        	this.statusObject});
+        	this.statusBar.ShowPanels = true;
+        	this.statusBar.SizingGrip = false;
+        	// 
+        	// statusLocation
+        	// 
+        	resources.ApplyResources(this.statusLocation, "statusLocation");
+        	// 
+        	// statusWall
+        	// 
+        	this.statusWall.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents;
+        	resources.ApplyResources(this.statusWall, "statusWall");
+        	// 
+        	// statusTile
+        	// 
+        	this.statusTile.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents;
+        	resources.ApplyResources(this.statusTile, "statusTile");
+        	// 
+        	// statusObject
+        	// 
+        	this.statusObject.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents;
+        	resources.ApplyResources(this.statusObject, "statusObject");
+        	// 
+        	// groupAdv
+        	// 
+        	resources.ApplyResources(this.groupAdv, "groupAdv");
+        	this.groupAdv.Controls.Add(this.checkBox6);
+        	this.groupAdv.Controls.Add(this.checkBox5);
+        	this.groupAdv.Controls.Add(this.checkBox4);
+        	this.groupAdv.Controls.Add(this.chkAltGrid);
+        	this.groupAdv.Controls.Add(this.tabMapTools);
+        	this.groupAdv.Controls.Add(this.checkBox2);
+        	this.groupAdv.Controls.Add(this.chkShowObj);
+        	this.groupAdv.Controls.Add(this.chkGrid);
+        	this.groupAdv.Controls.Add(this.chkTileGrid);
+        	this.groupAdv.Name = "groupAdv";
+        	this.groupAdv.TabStop = false;
+        	// 
+        	// checkBox6
+        	// 
+        	resources.ApplyResources(this.checkBox6, "checkBox6");
+        	this.checkBox6.Name = "checkBox6";
+        	this.checkBox6.UseVisualStyleBackColor = true;
+        	this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+        	// 
+        	// checkBox5
+        	// 
+        	resources.ApplyResources(this.checkBox5, "checkBox5");
+        	this.checkBox5.Checked = true;
+        	this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
+        	this.checkBox5.Name = "checkBox5";
+        	this.checkBox5.UseVisualStyleBackColor = true;
+        	this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+        	// 
+        	// checkBox4
+        	// 
+        	resources.ApplyResources(this.checkBox4, "checkBox4");
+        	this.checkBox4.Checked = true;
+        	this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+        	this.checkBox4.Name = "checkBox4";
+        	this.checkBox4.UseVisualStyleBackColor = true;
+        	this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+        	// 
+        	// chkAltGrid
+        	// 
+        	resources.ApplyResources(this.chkAltGrid, "chkAltGrid");
+        	this.chkAltGrid.Name = "chkAltGrid";
+        	this.chkAltGrid.UseVisualStyleBackColor = true;
+        	// 
+        	// tabMapTools
+        	// 
+        	this.tabMapTools.Controls.Add(this.tabWalls);
+        	this.tabMapTools.Controls.Add(this.tabTiles);
+        	this.tabMapTools.Controls.Add(this.tabObjects);
+        	this.tabMapTools.Controls.Add(this.tabPoly);
+        	resources.ApplyResources(this.tabMapTools, "tabMapTools");
+        	this.tabMapTools.Name = "tabMapTools";
+        	this.tabMapTools.SelectedIndex = 0;
+        	// 
+        	// tabWalls
+        	// 
+        	this.tabWalls.Controls.Add(this.pictureBox2);
+        	this.tabWalls.Controls.Add(this.wallGroup);
+        	resources.ApplyResources(this.tabWalls, "tabWalls");
+        	this.tabWalls.Name = "tabWalls";
+        	this.tabWalls.UseVisualStyleBackColor = true;
+        	// 
+        	// pictureBox2
+        	// 
+        	this.pictureBox2.BackColor = System.Drawing.Color.Black;
+        	this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+        	resources.ApplyResources(this.pictureBox2, "pictureBox2");
+        	this.pictureBox2.Name = "pictureBox2";
+        	this.pictureBox2.TabStop = false;
+        	// 
+        	// wallGroup
+        	// 
+        	this.wallGroup.Controls.Add(this.secretFlagsBoxes);
+        	this.wallGroup.Controls.Add(this.wallSelector);
+        	this.wallGroup.Controls.Add(this.buttonSecret);
+        	this.wallGroup.Controls.Add(this.destructableButton);
+        	this.wallGroup.Controls.Add(this.windowsButton);
+        	resources.ApplyResources(this.wallGroup, "wallGroup");
+        	this.wallGroup.Name = "wallGroup";
+        	this.wallGroup.TabStop = false;
+        	// 
+        	// secretFlagsBoxes
+        	// 
+        	this.secretFlagsBoxes.FormattingEnabled = true;
+        	resources.ApplyResources(this.secretFlagsBoxes, "secretFlagsBoxes");
+        	this.secretFlagsBoxes.Name = "secretFlagsBoxes";
+        	// 
+        	// wallSelector
+        	// 
+        	resources.ApplyResources(this.wallSelector, "wallSelector");
+        	this.wallSelector.Name = "wallSelector";
+        	this.wallSelector.Load += new System.EventHandler(this.wallSelector_Load);
+        	// 
+        	// buttonSecret
+        	// 
+        	resources.ApplyResources(this.buttonSecret, "buttonSecret");
+        	this.buttonSecret.Name = "buttonSecret";
+        	this.buttonSecret.Click += new System.EventHandler(this.buttonSecret_Click);
+        	// 
+        	// destructableButton
+        	// 
+        	resources.ApplyResources(this.destructableButton, "destructableButton");
+        	this.destructableButton.Name = "destructableButton";
+        	this.destructableButton.Click += new System.EventHandler(this.destructableButton_Click);
+        	// 
+        	// windowsButton
+        	// 
+        	resources.ApplyResources(this.windowsButton, "windowsButton");
+        	this.windowsButton.Name = "windowsButton";
+        	this.windowsButton.Click += new System.EventHandler(this.windowsButton_Click);
+        	// 
+        	// tabTiles
+        	// 
+        	this.tabTiles.Controls.Add(this.pictureBox3);
+        	this.tabTiles.Controls.Add(this.groupBox2);
+        	this.tabTiles.Controls.Add(this.floorGroup);
+        	resources.ApplyResources(this.tabTiles, "tabTiles");
+        	this.tabTiles.Name = "tabTiles";
+        	this.tabTiles.UseVisualStyleBackColor = true;
+        	// 
+        	// pictureBox3
+        	// 
+        	this.pictureBox3.BackColor = System.Drawing.Color.Black;
+        	this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+        	resources.ApplyResources(this.pictureBox3, "pictureBox3");
+        	this.pictureBox3.Name = "pictureBox3";
+        	this.pictureBox3.TabStop = false;
+        	// 
+        	// groupBox2
+        	// 
+        	this.groupBox2.Controls.Add(this.chkIgnoreOn);
+        	this.groupBox2.Controls.Add(this.label2);
+        	this.groupBox2.Controls.Add(this.label1);
+        	this.groupBox2.Controls.Add(this.cboEdgeIgnoreBox);
+        	this.groupBox2.Controls.Add(this.cboAutoEdge);
+        	this.groupBox2.Controls.Add(this.button1);
+        	resources.ApplyResources(this.groupBox2, "groupBox2");
+        	this.groupBox2.Name = "groupBox2";
+        	this.groupBox2.TabStop = false;
+        	// 
+        	// chkIgnoreOn
+        	// 
+        	resources.ApplyResources(this.chkIgnoreOn, "chkIgnoreOn");
+        	this.chkIgnoreOn.Name = "chkIgnoreOn";
+        	this.chkIgnoreOn.UseVisualStyleBackColor = true;
+        	// 
+        	// label2
+        	// 
+        	resources.ApplyResources(this.label2, "label2");
+        	this.label2.Name = "label2";
+        	// 
+        	// label1
+        	// 
+        	resources.ApplyResources(this.label1, "label1");
+        	this.label1.Name = "label1";
+        	// 
+        	// cboEdgeIgnoreBox
+        	// 
+        	this.cboEdgeIgnoreBox.FormattingEnabled = true;
+        	resources.ApplyResources(this.cboEdgeIgnoreBox, "cboEdgeIgnoreBox");
+        	this.cboEdgeIgnoreBox.Name = "cboEdgeIgnoreBox";
+        	this.cboEdgeIgnoreBox.Sorted = true;
+        	// 
+        	// cboAutoEdge
+        	// 
+        	this.cboAutoEdge.FormattingEnabled = true;
+        	resources.ApplyResources(this.cboAutoEdge, "cboAutoEdge");
+        	this.cboAutoEdge.Name = "cboAutoEdge";
+        	// 
+        	// button1
+        	// 
+        	resources.ApplyResources(this.button1, "button1");
+        	this.button1.Name = "button1";
+        	this.button1.UseVisualStyleBackColor = true;
+        	this.button1.Click += new System.EventHandler(this.button1_Click);
+        	// 
+        	// floorGroup
+        	// 
+        	this.floorGroup.Controls.Add(this.checkBox1);
+        	this.floorGroup.Controls.Add(this.threeFloorBox);
+        	this.floorGroup.Controls.Add(this.chkAutoEdge);
+        	this.floorGroup.Controls.Add(this.buttonBlend);
+        	this.floorGroup.Controls.Add(this.tileVar);
+        	this.floorGroup.Controls.Add(this.tileGraphic);
+        	this.floorGroup.Controls.Add(this.floorButton);
+        	resources.ApplyResources(this.floorGroup, "floorGroup");
+        	this.floorGroup.Name = "floorGroup";
+        	this.floorGroup.TabStop = false;
+        	// 
+        	// checkBox1
+        	// 
+        	this.checkBox1.Checked = true;
+        	this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+        	resources.ApplyResources(this.checkBox1, "checkBox1");
+        	this.checkBox1.Name = "checkBox1";
+        	this.checkBox1.UseVisualStyleBackColor = true;
+        	this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+        	// 
+        	// threeFloorBox
+        	// 
+        	resources.ApplyResources(this.threeFloorBox, "threeFloorBox");
+        	this.threeFloorBox.Name = "threeFloorBox";
+        	// 
+        	// chkAutoEdge
+        	// 
+        	resources.ApplyResources(this.chkAutoEdge, "chkAutoEdge");
+        	this.chkAutoEdge.Name = "chkAutoEdge";
+        	this.chkAutoEdge.UseVisualStyleBackColor = true;
+        	// 
+        	// buttonBlend
+        	// 
+        	resources.ApplyResources(this.buttonBlend, "buttonBlend");
+        	this.buttonBlend.Name = "buttonBlend";
+        	this.buttonBlend.Click += new System.EventHandler(this.buttonBlend_Click);
+        	// 
+        	// tileVar
+        	// 
+        	this.tileVar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        	this.tileVar.DropDownWidth = 40;
+        	this.tileVar.FormattingEnabled = true;
+        	resources.ApplyResources(this.tileVar, "tileVar");
+        	this.tileVar.Name = "tileVar";
+        	// 
+        	// tileGraphic
+        	// 
+        	this.tileGraphic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        	this.tileGraphic.DropDownWidth = 180;
+        	this.tileGraphic.FormattingEnabled = true;
+        	resources.ApplyResources(this.tileGraphic, "tileGraphic");
+        	this.tileGraphic.Name = "tileGraphic";
+        	this.tileGraphic.Sorted = true;
+        	this.tileGraphic.SelectedIndexChanged += new System.EventHandler(this.tileGraphic_SelectedIndexChanged);
+        	// 
+        	// floorButton
+        	// 
+        	resources.ApplyResources(this.floorButton, "floorButton");
+        	this.floorButton.Name = "floorButton";
+        	this.floorButton.Click += new System.EventHandler(this.floorButton_Click);
+        	// 
+        	// tabObjects
+        	// 
+        	this.tabObjects.Controls.Add(this.groupBox1);
+        	this.tabObjects.Controls.Add(this.radFullSnap);
+        	this.tabObjects.Controls.Add(this.radCenterSnap);
+        	this.tabObjects.Controls.Add(this.radNoSnap);
+        	this.tabObjects.Controls.Add(this.pictureBox1);
+        	this.tabObjects.Controls.Add(this.objectGroup);
+        	resources.ApplyResources(this.tabObjects, "tabObjects");
+        	this.tabObjects.Name = "tabObjects";
+        	this.tabObjects.UseVisualStyleBackColor = true;
+        	// 
+        	// groupBox1
+        	// 
+        	this.groupBox1.Controls.Add(this.radioButton3);
+        	this.groupBox1.Controls.Add(this.radioButton2);
+        	this.groupBox1.Controls.Add(this.radioButton1);
+        	resources.ApplyResources(this.groupBox1, "groupBox1");
+        	this.groupBox1.Name = "groupBox1";
+        	this.groupBox1.TabStop = false;
+        	// 
+        	// radioButton3
+        	// 
+        	resources.ApplyResources(this.radioButton3, "radioButton3");
+        	this.radioButton3.Name = "radioButton3";
+        	this.radioButton3.UseVisualStyleBackColor = true;
+        	this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+        	// 
+        	// radioButton2
+        	// 
+        	resources.ApplyResources(this.radioButton2, "radioButton2");
+        	this.radioButton2.Checked = true;
+        	this.radioButton2.Name = "radioButton2";
+        	this.radioButton2.TabStop = true;
+        	this.radioButton2.UseVisualStyleBackColor = true;
+        	this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+        	// 
+        	// radioButton1
+        	// 
+        	resources.ApplyResources(this.radioButton1, "radioButton1");
+        	this.radioButton1.Name = "radioButton1";
+        	this.radioButton1.UseVisualStyleBackColor = true;
+        	this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+        	// 
+        	// radFullSnap
+        	// 
+        	resources.ApplyResources(this.radFullSnap, "radFullSnap");
+        	this.radFullSnap.Name = "radFullSnap";
+        	this.radFullSnap.UseVisualStyleBackColor = true;
+        	this.radFullSnap.CheckedChanged += new System.EventHandler(this.radFullSnap_CheckedChanged);
+        	// 
+        	// radCenterSnap
+        	// 
+        	resources.ApplyResources(this.radCenterSnap, "radCenterSnap");
+        	this.radCenterSnap.Name = "radCenterSnap";
+        	this.radCenterSnap.UseVisualStyleBackColor = true;
+        	this.radCenterSnap.CheckedChanged += new System.EventHandler(this.radCenterSnap_CheckedChanged);
+        	// 
+        	// radNoSnap
+        	// 
+        	resources.ApplyResources(this.radNoSnap, "radNoSnap");
+        	this.radNoSnap.Checked = true;
+        	this.radNoSnap.Name = "radNoSnap";
+        	this.radNoSnap.TabStop = true;
+        	this.radNoSnap.UseVisualStyleBackColor = true;
+        	this.radNoSnap.CheckedChanged += new System.EventHandler(this.radNoSnap_CheckedChanged);
+        	// 
+        	// pictureBox1
+        	// 
+        	this.pictureBox1.BackColor = System.Drawing.Color.Black;
+        	this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+        	resources.ApplyResources(this.pictureBox1, "pictureBox1");
+        	this.pictureBox1.Name = "pictureBox1";
+        	this.pictureBox1.TabStop = false;
+        	// 
+        	// objectGroup
+        	// 
+        	this.objectGroup.Controls.Add(this.cboObjCreate);
+        	this.objectGroup.Controls.Add(this.selectButton);
+        	this.objectGroup.Controls.Add(this.newObjectButton);
+        	resources.ApplyResources(this.objectGroup, "objectGroup");
+        	this.objectGroup.Name = "objectGroup";
+        	this.objectGroup.TabStop = false;
+        	// 
+        	// cboObjCreate
+        	// 
+        	this.cboObjCreate.FormattingEnabled = true;
+        	resources.ApplyResources(this.cboObjCreate, "cboObjCreate");
+        	this.cboObjCreate.Name = "cboObjCreate";
+        	this.cboObjCreate.Sorted = true;
+        	this.cboObjCreate.SelectedIndexChanged += new System.EventHandler(this.cboObjCreate_SelectedIndexChanged);
+        	// 
+        	// selectButton
+        	// 
+        	resources.ApplyResources(this.selectButton, "selectButton");
+        	this.selectButton.Name = "selectButton";
+        	this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
+        	// 
+        	// newObjectButton
+        	// 
+        	resources.ApplyResources(this.newObjectButton, "newObjectButton");
+        	this.newObjectButton.Name = "newObjectButton";
+        	this.newObjectButton.Click += new System.EventHandler(this.newObjectButton_Click);
+        	// 
+        	// tabPoly
+        	// 
+        	this.tabPoly.Controls.Add(this.wpGroup);
+        	this.tabPoly.Controls.Add(this.groupPolygons);
+        	resources.ApplyResources(this.tabPoly, "tabPoly");
+        	this.tabPoly.Name = "tabPoly";
+        	this.tabPoly.UseVisualStyleBackColor = true;
+        	// 
+        	// wpGroup
+        	// 
+        	this.wpGroup.Controls.Add(this.checkBox3);
+        	this.wpGroup.Controls.Add(this.buttonSelWay);
+        	this.wpGroup.Controls.Add(this.label4);
+        	this.wpGroup.Controls.Add(this.txtWpDefault);
+        	this.wpGroup.Controls.Add(this.label3);
+        	this.wpGroup.Controls.Add(this.editWpButton);
+        	this.wpGroup.Controls.Add(this.wpNameBox);
+        	this.wpGroup.Controls.Add(this.wpAddButton);
+        	resources.ApplyResources(this.wpGroup, "wpGroup");
+        	this.wpGroup.Name = "wpGroup";
+        	this.wpGroup.TabStop = false;
+        	// 
+        	// checkBox3
+        	// 
+        	resources.ApplyResources(this.checkBox3, "checkBox3");
+        	this.checkBox3.Name = "checkBox3";
+        	this.checkBox3.UseVisualStyleBackColor = true;
+        	this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+        	// 
+        	// buttonSelWay
+        	// 
+        	resources.ApplyResources(this.buttonSelWay, "buttonSelWay");
+        	this.buttonSelWay.Name = "buttonSelWay";
+        	this.buttonSelWay.UseVisualStyleBackColor = true;
+        	this.buttonSelWay.Click += new System.EventHandler(this.buttonSelWay_Click);
+        	// 
+        	// label4
+        	// 
+        	resources.ApplyResources(this.label4, "label4");
+        	this.label4.Name = "label4";
+        	// 
+        	// txtWpDefault
+        	// 
+        	resources.ApplyResources(this.txtWpDefault, "txtWpDefault");
+        	this.txtWpDefault.Name = "txtWpDefault";
+        	this.txtWpDefault.TextChanged += new System.EventHandler(this.txtWpDefault_TextChanged);
+        	// 
+        	// label3
+        	// 
+        	resources.ApplyResources(this.label3, "label3");
+        	this.label3.Name = "label3";
+        	// 
+        	// editWpButton
+        	// 
+        	resources.ApplyResources(this.editWpButton, "editWpButton");
+        	this.editWpButton.Name = "editWpButton";
+        	this.editWpButton.Click += new System.EventHandler(this.renWpButton_Click);
+        	// 
+        	// wpNameBox
+        	// 
+        	resources.ApplyResources(this.wpNameBox, "wpNameBox");
+        	this.wpNameBox.Name = "wpNameBox";
+        	this.wpNameBox.TextChanged += new System.EventHandler(this.wpNameBox_TextChanged);
+        	// 
+        	// wpAddButton
+        	// 
+        	resources.ApplyResources(this.wpAddButton, "wpAddButton");
+        	this.wpAddButton.Name = "wpAddButton";
+        	this.wpAddButton.Click += new System.EventHandler(this.wpAddButton_Click);
+        	// 
+        	// groupPolygons
+        	// 
+        	this.groupPolygons.Controls.Add(this.buttonPolygonDelete);
+        	this.groupPolygons.Controls.Add(this.buttonPolygonNew);
+        	this.groupPolygons.Controls.Add(this.buttonEditPolygon);
+        	this.groupPolygons.Controls.Add(this.buttonPoints);
+        	this.groupPolygons.Controls.Add(this.listPolygons);
+        	resources.ApplyResources(this.groupPolygons, "groupPolygons");
+        	this.groupPolygons.Name = "groupPolygons";
+        	this.groupPolygons.TabStop = false;
+        	// 
+        	// buttonPolygonDelete
+        	// 
+        	resources.ApplyResources(this.buttonPolygonDelete, "buttonPolygonDelete");
+        	this.buttonPolygonDelete.Name = "buttonPolygonDelete";
+        	this.buttonPolygonDelete.Click += new System.EventHandler(this.buttonPolygonDelete_Click);
+        	// 
+        	// buttonPolygonNew
+        	// 
+        	resources.ApplyResources(this.buttonPolygonNew, "buttonPolygonNew");
+        	this.buttonPolygonNew.Name = "buttonPolygonNew";
+        	this.buttonPolygonNew.Click += new System.EventHandler(this.buttonPolygonNew_Click);
+        	// 
+        	// buttonEditPolygon
+        	// 
+        	resources.ApplyResources(this.buttonEditPolygon, "buttonEditPolygon");
+        	this.buttonEditPolygon.Name = "buttonEditPolygon";
+        	this.buttonEditPolygon.Click += new System.EventHandler(this.buttonEditPolygon_Click);
+        	// 
+        	// buttonPoints
+        	// 
+        	resources.ApplyResources(this.buttonPoints, "buttonPoints");
+        	this.buttonPoints.Name = "buttonPoints";
+        	this.buttonPoints.Click += new System.EventHandler(this.buttonPoints_Click);
+        	// 
+        	// listPolygons
+        	// 
+        	this.listPolygons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        	this.listPolygons.DropDownWidth = 120;
+        	this.listPolygons.FormattingEnabled = true;
+        	resources.ApplyResources(this.listPolygons, "listPolygons");
+        	this.listPolygons.Name = "listPolygons";
+        	this.listPolygons.Click += new System.EventHandler(this.listPolygons_Click);
+        	// 
+        	// checkBox2
+        	// 
+        	resources.ApplyResources(this.checkBox2, "checkBox2");
+        	this.checkBox2.Name = "checkBox2";
+        	this.checkBox2.UseVisualStyleBackColor = true;
+        	this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+        	// 
+        	// chkShowObj
+        	// 
+        	resources.ApplyResources(this.chkShowObj, "chkShowObj");
+        	this.chkShowObj.Checked = true;
+        	this.chkShowObj.CheckState = System.Windows.Forms.CheckState.Checked;
+        	this.chkShowObj.Name = "chkShowObj";
+        	this.chkShowObj.UseVisualStyleBackColor = true;
+        	// 
+        	// chkGrid
+        	// 
+        	resources.ApplyResources(this.chkGrid, "chkGrid");
+        	this.chkGrid.Name = "chkGrid";
+        	this.chkGrid.UseVisualStyleBackColor = true;
+        	// 
+        	// chkTileGrid
+        	// 
+        	resources.ApplyResources(this.chkTileGrid, "chkTileGrid");
+        	this.chkTileGrid.Name = "chkTileGrid";
+        	this.chkTileGrid.UseVisualStyleBackColor = true;
+        	this.chkTileGrid.CheckedChanged += new System.EventHandler(this.chkTileGrid_CheckedChanged);
+        	// 
+        	// scrollPanel
+        	// 
+        	resources.ApplyResources(this.scrollPanel, "scrollPanel");
+        	this.scrollPanel.Controls.Add(this.mapPanel);
+        	this.scrollPanel.Name = "scrollPanel";
+        	this.scrollPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollPanel_Scroll);
+        	// 
+        	// mapPanel
+        	// 
+        	resources.ApplyResources(this.mapPanel, "mapPanel");
+        	this.mapPanel.Name = "mapPanel";
+        	this.mapPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mapPanel_Paint);
+        	this.mapPanel.Leave += new System.EventHandler(this.mapPanel_Leave);
+        	this.mapPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mapPanel_MouseDown);
+        	this.mapPanel.MouseLeave += new System.EventHandler(this.mapPanel_MouseLeave);
+        	this.mapPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mapPanel_MouseMove);
+        	this.mapPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mapPanel_MouseUp);
+        	this.mapPanel.Resize += new System.EventHandler(this.mapPanel_Resize);
+        	// 
+        	// contextMenu
+        	// 
+        	this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+        	        	        	this.contextMenuCopy,
+        	        	        	this.contextMenuPaste,
+        	        	        	this.contextMenuDelete,
+        	        	        	this.menuItem3,
+        	        	        	this.contextMenuProperties,
+        	        	        	this.contextMenuExportDefault,
+        	        	        	this.contextMenuExportBinary});
+        	// 
+        	// contextMenuCopy
+        	// 
+        	this.contextMenuCopy.Index = 0;
+        	resources.ApplyResources(this.contextMenuCopy, "contextMenuCopy");
+        	this.contextMenuCopy.Click += new System.EventHandler(this.contextMenuCopy_Click);
+        	// 
+        	// contextMenuPaste
+        	// 
+        	this.contextMenuPaste.Index = 1;
+        	resources.ApplyResources(this.contextMenuPaste, "contextMenuPaste");
+        	this.contextMenuPaste.Click += new System.EventHandler(this.contextMenuPaste_Click);
+        	// 
+        	// tmrInvalidate
+        	// 
+        	this.tmrInvalidate.Enabled = true;
+        	this.tmrInvalidate.Tick += new System.EventHandler(this.tmrInvalidate_Tick);
+        	// 
+        	// MapView
+        	// 
+        	this.Controls.Add(this.groupAdv);
+        	this.Controls.Add(this.scrollPanel);
+        	this.Controls.Add(this.statusBar);
+        	this.Name = "MapView";
+        	resources.ApplyResources(this, "$this");
+        	((System.ComponentModel.ISupportInitialize)(this.statusLocation)).EndInit();
+        	((System.ComponentModel.ISupportInitialize)(this.statusWall)).EndInit();
+        	((System.ComponentModel.ISupportInitialize)(this.statusTile)).EndInit();
+        	((System.ComponentModel.ISupportInitialize)(this.statusObject)).EndInit();
+        	this.groupAdv.ResumeLayout(false);
+        	this.groupAdv.PerformLayout();
+        	this.tabMapTools.ResumeLayout(false);
+        	this.tabWalls.ResumeLayout(false);
+        	((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+        	this.wallGroup.ResumeLayout(false);
+        	this.tabTiles.ResumeLayout(false);
+        	((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+        	this.groupBox2.ResumeLayout(false);
+        	this.groupBox2.PerformLayout();
+        	this.floorGroup.ResumeLayout(false);
+        	this.floorGroup.PerformLayout();
+        	this.tabObjects.ResumeLayout(false);
+        	this.tabObjects.PerformLayout();
+        	this.groupBox1.ResumeLayout(false);
+        	this.groupBox1.PerformLayout();
+        	((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+        	this.objectGroup.ResumeLayout(false);
+        	this.tabPoly.ResumeLayout(false);
+        	this.wpGroup.ResumeLayout(false);
+        	this.wpGroup.PerformLayout();
+        	this.groupPolygons.ResumeLayout(false);
+        	this.scrollPanel.ResumeLayout(false);
+        	this.ResumeLayout(false);
         }
         #endregion
 
